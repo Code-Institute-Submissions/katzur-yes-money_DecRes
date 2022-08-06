@@ -1,8 +1,23 @@
 const usernameField = document.querySelector("#usernameField");
 const feedbackArea = document.querySelector(".invalid_feedback");
 const emailField = document.querySelector("#emailField");
-const EmailFeedbackArea = document.querySelector (".EmailFeedbackArea");
+const EmailFeedbackArea = document.querySelector(".EmailFeedbackArea");
+const passwordField = document.querySelector("#passwordField");
 const usernameSuccessOutput = document.querySelector(".usernameSuccessOutput");
+const checkbox = document.querySelector("#showPasswordToggle");
+
+
+checkbox.addEventListener("click", (e) => {
+    if (e.target.checked) {
+        checkboxDescription.textContent = "Show the password";
+        passwordField.setAttribute("type", "text");
+    } else {
+        checkboxDescription.textContent = "Hide the password";
+        passwordField.setAttribute("type", "password");
+    }
+});
+
+
 
 emailField.addEventListener("keyup", (e) => {
     const emailVal = e.target.value;
