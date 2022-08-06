@@ -18,7 +18,6 @@ checkbox.addEventListener("click", (e) => {
 });
 
 
-
 emailField.addEventListener("keyup", (e) => {
     const emailVal = e.target.value;
 
