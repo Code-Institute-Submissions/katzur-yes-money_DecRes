@@ -5,19 +5,23 @@
 {% block content %}
 
 
-<form>
+<form action="{% url 'register' %}" method="post">
     <img src="https://res.cloudinary.com/katzur/image/upload/v1659792607/Logo_500x500_px_nh5sef.png" alt="YESMoney logo" width="300" height="300">
     <h1 class="h3 mb-3 fw-normal">Register for a free account</h1>
 
+    {% csrf_token %}
+
+    {% include 'partials/_messages.html' %}
+
     <div class="form-floating justify-content-center">
-        <input type="text" name="username" class="form-control form-control-sm" id="usernameField" placeholder="Username">
+        <input type="text" name="username" class="form-control form-control-sm" id="usernameField" placeholder="Username" value="{{fieldValues.username}}">
         <label for="usernameField">Username</label>
     </div>
     <div class="invalid_feedback invalid-feedback" style="display:none">
     </div>
     <p class="text-sm text-success usernameSuccessOutput"></p>
     <div class="form-floating justify-content-center">
-        <input type="email" name="email" class="form-control form-control-sm" id="emailField" placeholder="Email">
+        <input type="email" name="email" class="form-control form-control-sm" id="emailField" placeholder="Email" value="{{fieldValues.email}}">
         <label for="emailField">Email address</label>
     </div>
     <div class="EmailFeedbackArea invalid-feedback" style="display:none">
@@ -31,7 +35,7 @@
             <input class="form-check-input" type="checkbox" name="checkbox" id="showPasswordToggle">
             <label class="form-check-label" id="checkboxDescription" for="showPasswordToggle">Show the password</label>
         </div>
-    <button class="w-100 btn btn-lg btn-success justify-content-center" type="submit">Register</button>
+    <button class="w-100 btn btn-lg btn-success justify-content-center submit-btn" type="submit">Register</button>
     <p class="mt-5 mb-3 text-muted justify-content-center">&copy; YESMoney 2022</p>
 </form>
 
