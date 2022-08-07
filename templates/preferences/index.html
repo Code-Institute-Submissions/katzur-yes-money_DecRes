@@ -2,18 +2,22 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h5>Preferred Currency</h5>
-    <hr />
-    <div class="input-group">
-        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-            <option selected>Choose...</option>
-            {% for currency in currencies %}
+    {% include 'partials/_messages.html' %}
+    <form action="{% url 'preferences' %}" method="POST">
+        {% csrf_token %}
+        <h5>Preferred Currency</h5>
+        <hr />
+        <div class="input-group">
+            <select name="currency" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                <option selected>Choose...</option>
+                {% for currency in currencies %}
 
-            <option selected>{{currency.name}} - {{currency.value}}</option>
-            
-            {% endfor %}
-        </select>
-        <button class="btn btn-outline-secondary" type="button">Button</button>
-    </div>
+                <option name="currency" value="{{currency.name}} - {{currency.value}}">{{currency.name}} - {{currency.value}}</option>
+
+                {% endfor %}
+            </select>
+            <input class="btn btn-outline-secondary" type="submit" value="Save"/>
+        </div>
+    </form>
 </div>
 {% endblock content %}
