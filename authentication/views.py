@@ -88,3 +88,10 @@ class LoginView(View):
 class IndexView(View):
     def get(self, request):
         return render(request, 'index.html')
+
+
+class LogoutView(View):
+    def post(self, request):
+        auth.logout(request)
+        messages.success(request, 'You have been successfully logged out')
+        return redirect('index')

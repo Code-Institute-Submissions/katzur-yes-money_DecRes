@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> Expenses list</h1>
+<div class="container">
 
-<ul class="list-group">
-    <li class="list-group-item">Bough beer</li>
-    <li class="list-group-item">Bough beer</li>
-    <li class="list-group-item">Bough beer</li>
-    <li class="list-group-item">Bough beer</li>
-</ul>
+    {% include 'partials/_messages.html' %}
+
+    <h1> Expenses list</h1>
+
+    <ul class="list-group">
+        <li class="list-group-item">Bough beer</li>
+        <li class="list-group-item">Bough beer</li>
+        <li class="list-group-item">Bough beer</li>
+        <li class="list-group-item">Bough beer</li>
+    </ul>
+</div>
+
+
 {% endblock content %}
