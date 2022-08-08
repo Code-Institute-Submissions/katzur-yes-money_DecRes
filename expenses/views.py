@@ -9,7 +9,12 @@ from django.contrib import messages
 @login_required(login_url='/authentication/login')
 def index(request):
     categories = Category.objects.all()
-    return render(request, 'expenses/index.html')
+    expenses = Expense.objects.filter(owner=request.user)
+
+    context = {
+        'expenses': expenses
+    }
+    return render(request, 'expenses/index.html', context)
 
 
 @login_required(login_url='/authentication/login')
@@ -40,3 +45,20 @@ def add_expense(request):
         messages.success(request, 'Expense added successfully')
 
         return redirect('expenses')
+
+
+def expense_edit(request, id):
+    expense = Expense.objects.get(pk=id)
+    categories = Category.objects.all()
+    context = {
+        'expense': expense,
+        'values': expense,
+        'categories': categories,
+    }
+    if request.method == 'GET':
+        
+        return render(request, 'expenses/edit-expense.html', context)
+
+    else:
+        messages.info(request, 'Handling post form')
+        return render(request, 'expenses/edit-expense.html', context)
