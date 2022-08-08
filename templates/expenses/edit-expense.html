@@ -14,7 +14,7 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{% url 'add-expense' %}" method="post">
+            <form action="{% url 'expense-edit' expense.id %}" method="post">
 
                 {% include 'partials/_messages.html'%}
                 {% csrf_token %}
