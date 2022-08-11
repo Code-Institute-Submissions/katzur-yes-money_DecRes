@@ -9,9 +9,11 @@
 
     <title>YESMoney</title>
 
-    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="https://getbootstrap.com/docs/5.2/examples/dashboard/dashboard.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/katzur/image/upload/v1659794036/favicon_jqzlwt.png" />
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://res.cloudinary.com/katzur/image/upload/v1659794036/favicon_jqzlwt.png" />
 
 
     <style>
@@ -19,6 +21,9 @@
             justify-content: end;
         }
 
+        .sidebar {
+            position: initial;
+        }
     </style>
 </head>
 
@@ -30,10 +35,13 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search"
-            aria-label="Search">
-        <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
+        <div class="navbar-nav px-3 mx-3">
+            <div class="nav-item text-nowrap" style="display: flex; flex-direction: row; align-items: center;">
+                <form class="nav-item text-nowrap">
+                    <span class="nav-link px-3" href="">
+                        ({{request.user.username}})
+                    </span>
+                </form>
                 <form action="{% url 'logout' %}" method="POST">
                     {% csrf_token %}
                     <input class="text text-capitalize" type="submit" value="Sign out">
