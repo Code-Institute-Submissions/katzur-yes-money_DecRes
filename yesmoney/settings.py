@@ -34,6 +34,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["yes-money.herokuapp.com", "localhost"]
 
+LOGIN_REDIRECT_URL = 'login'
+LOGOUT_REDIRECT_URL = 'index'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_FILE_PATH = BASE_DIR / 'emails'
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
 
 # Application definition
 
