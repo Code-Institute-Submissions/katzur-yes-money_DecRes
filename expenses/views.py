@@ -97,7 +97,7 @@ def expense_edit(request, id):
         category = request.POST['category']
 
         if not description:
-            messages.error(request, 'description is required')
+            messages.error(request, 'Description is required')
             return render(request, 'expenses/edit-expense.html', context)
 
         expense.owner = request.user
