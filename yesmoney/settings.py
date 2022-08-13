@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'expenses',
     'userpreferences',
+    'incomes',
 ]
 
 MIDDLEWARE = [
