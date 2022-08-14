@@ -122,7 +122,7 @@ def delete_expense(request, id):
 def expense_category_summary(request):
     todays_date = datetime.date.today()
     six_months_ago = todays_date-datetime.timedelta(days=30*6)
-    expenses = Expense.objects.filter(date__gte=six_months_ago, date_lte=todays_date)
+    expenses = Expense.objects.filter(owner=request.user, date__gte=six_months_ago, date_lte=todays_date)
     finalrep = {
 
     }
@@ -138,9 +138,14 @@ def expense_category_summary(request):
 
         for item in filtered_by_category:
             amount += item.amount
-
         return amount
 
     for x in expenses:
         for y in category_list:
             finalrep[y] = get_expense_category_amount(y)
+
+    return JsonResponse({'expense_category_data': finalrep}, safe=False)
+
+
+def stats_view(request):
+    return render(request, 'expenses/stats.html')
