@@ -154,7 +154,7 @@ def stats_view(request):
 
 def export_csv(request):
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename=Expenses' + datetime.datetime.now() + '.csv'
+    response['Content-Disposition'] = 'attachment; filename=Expenses' + str(datetime.datetime.now()) + '.csv'
 
     writer = csv.writer(response)
     writer.writerow(['Amount', 'Description', 'Category', 'Date'])
@@ -162,6 +162,6 @@ def export_csv(request):
     expenses = Expense.objects.filter(owner=request.user)
 
     for expense in expenses:
-        writer.writerow(expense.amount, expense.description, expense.category, expense.date)
+        writer.writerow([expense.amount, expense.description, expense.category, expense.date])
 
     return response
