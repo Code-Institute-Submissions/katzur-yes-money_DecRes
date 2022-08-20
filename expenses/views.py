@@ -1,15 +1,13 @@
-import datetime
-import csv
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+from .models import Category, Expense
 from django.contrib import messages
+from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 import json
 from django.http import JsonResponse, HttpResponse
 from userpreferences.models import UserPreference
-from .models import Category, Expense
-from django.shortcuts import get_object_or_404
+import datetime
 
 # Create your views here.
 
@@ -17,7 +15,6 @@ from django.shortcuts import get_object_or_404
 def search_expenses(request):
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
-
         expenses = Expense.objects.filter(
             amount__istartswith=search_str, owner=request.User) | Expense.objects.filter(
             date__istartswith=search_str, owner=request.User) | Expense.objects.filter(
