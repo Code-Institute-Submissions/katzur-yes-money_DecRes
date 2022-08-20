@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
-from userpreferences.models import UserPreference
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from userpreferences.models import UserPreference
 import json
 from django.http import JsonResponse
 from .models import Source, Income
@@ -97,7 +97,7 @@ def income_edit(request, id):
             messages.error(request, 'Description is required')
             return render(request, 'income/edit_income.html', context)
         income.amount = amount
-        income. date = date
+        income.date = date
         income.source = source
         income.description = description
 

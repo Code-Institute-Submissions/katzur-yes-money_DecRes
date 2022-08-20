@@ -52,13 +52,14 @@ usernameField.addEventListener("keyup", (e) => {
     const usernameVal = e.target.value;
 
     usernameSuccessOutput.style.display = "block";
+
     usernameSuccessOutput.textContent = `Checking ${usernameVal}`;
 
     usernameField.classList.remove("is-invalid");
     feedbackArea.style.display = "none";
 
     if (usernameVal.lenght > 0) {
-        fetch("/authentication/validate-username", {
+        fetch("authentication/validate-username", {
                 body: JSON.stringify({
                     username: usernameVal
                 }),

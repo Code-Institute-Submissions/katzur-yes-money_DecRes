@@ -1,3 +1,5 @@
+import datetime
+import csv
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -7,8 +9,6 @@ import json
 from django.http import JsonResponse, HttpResponse
 from userpreferences.models import UserPreference
 from .models import Category, Expense
-import datetime
-import csv
 
 # Create your views here.
 
@@ -18,10 +18,10 @@ def search_expenses(request):
         search_str = json.loads(request.body).get('searchText')
 
         expenses = Expense.objects.filter(
-            amount__istartswith=search_str, owner=request.user) | Expense.objects.filter(
-            date__istartswith=search_str, owner=request.user) | Expense.objects.filter(
-            description__icontains=search_str, owner=request.user) | Expense.objects.filter(
-            category__icontains=search_str, owner=request.user)
+            amount__istartswith=search_str, owner=request.User) | Expense.objects.filter(
+            date__istartswith=search_str, owner=request.User) | Expense.objects.filter(
+            description__icontains=search_str, owner=request.User) | Expense.objects.filter(
+            category__icontains=search_str, owner=request.User)
             
         data = expenses.values()
         return JsonResponse(list(data), safe=False)
@@ -103,7 +103,7 @@ def expense_edit(request, id):
 
         expense.owner = request.user
         expense.amount = amount
-        expense. date = date
+        expense.date = date
         expense.category = category
         expense.description = description
 
