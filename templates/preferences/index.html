@@ -1,27 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-4">
+
+<div class="container my-5">
     {% include 'partials/_messages.html' %}
-    <form action="{% url 'preferences' %}" method="POST">
-        {% csrf_token %}
-        <h5>Preferred Currency</h5>
-        <hr />
-        <div class="input-group">
-            <select name="currency" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                
-                {% if user_preferences.currency %}
-                <option name="currency" value="user_preferences.currency" selected>{{user_preferences.currency}}</option>
-                {% endif %}
-                
-                {% for currency in currencies %}
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <form action="{% url 'preferences' %}" method="POST">
+                {% csrf_token %}
+                <h5>Choose your preferred currency</h5>
+                <hr />
+                <div class="input-group">
+                    <select name="currency" class="form-select" id="inputGroupSelect04"
+                        aria-label="Example select with button addon">
 
-                <option name="currency" value="{{currency.name}} - {{currency.value}}">{{currency.name}} - {{currency.value}}</option>
+                        {% if user_preferences.currency %}
+                        <option name="currency" value="user_preferences.currency" selected>{{user_preferences.currency}}
+                        </option>
+                        {% endif %}
 
-                {% endfor %}
-            </select>
-            <input class="btn btn-outline-secondary" type="submit" value="Save"/>
+                        {% for currency in currencies %}
+
+                        <option name="currency" value="{{currency.name}} - {{currency.value}}">{{currency.name}} -
+                            {{currency.value}}</option>
+
+                        {% endfor %}
+                    </select>
+                    <input class="btn btn-outline-success" type="submit" value="Save" />
+                </div>
+            </form>
         </div>
-    </form>
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg mb-4">
+            <img class="rounded-lg-3 img-fluid"
+                src="https://res.cloudinary.com/katzur/image/upload/v1661028741/5242967_tpc0k1.jpg"
+                alt="Picture of a broken piggy bank" width="600px" id="deleteconfimg">
+        </div>
+    </div>
 </div>
+
 {% endblock content %}

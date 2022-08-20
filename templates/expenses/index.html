@@ -2,10 +2,16 @@
 {% load static %}
 
 {% block content %}
+
+
+
 <div class="container mt-4 mb-4">
-    <div class="row">
-        <div class="col-md-10">
-            <nav aria-label="breadcrumb">
+    {% include 'partials/_messages.html' %}
+
+    <div class="row d-flex flex-row mt-4 mb-5">
+        <div class="col-md-4" style="display: -webkit-inline-box;">
+
+            <nav aria-label="breadcrumb" style="margin-right: 5em;">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a href="">Expenses</a>
@@ -15,63 +21,58 @@
                     </li>
                 </ol>
             </nav>
-        </div>
 
-        <div class="col-md-2">
             <a href="{% url 'add-expense' %}" class="btn btn-success">Add Expense</a>
         </div>
     </div>
 
-    <div class="container mt-4 mb-4">
-        {% include 'partials/_messages.html' %}
+    <div class="row">
+        <div class="col-md-8"></div>
+    </div>
+    <div class="row d-flex flex-row mt-4 mb-5">
+        <div class="col-md-4" style="display: -webkit-inline-box;">
 
-        <div class="row">
-            <div class="col-md-8"></div>
-        </div>
-        <div class="row d-flex flex-row-reverse mt-4 mb-5">
-            <div class="col-md-4" style="display: -webkit-inline-box;">
+            <a href="{% url 'export-csv' %}" class="btn btn-secondary" style="margin-right: 1.5em;">Export CSV</a>
 
-                <a href="{% url 'export-csv' %}" class="btn btn-secondary" style="margin-right: 1.5em;">Export CSV</a>
-
-                <div class="form-group">
-                    <input type="text" class="form-control" id="searchField" placeholder="Search">
-                </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="searchField" placeholder="Search">
             </div>
-        </div>
-
-        {% if expenses.count %}
-
-        <div class="app-table">
-            <table class="table table-stripped table-hover">
-                <thead>
-                    <tr>
-                        <th>Amount ({{currency}})</th>
-                        <th>Category</th>
-                        <th>Description</th>
-                        <th>Date</th>
-                        <th></th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    {% for expense in page_obj %}
-                    <tr>
-                        <td>{{expense.amount}}</td>
-                        <td>{{expense.category}}</td>
-                        <td>{{expense.description}}</td>
-                        <td>{{expense.date}}</td>
-                        <td><a href="{% url 'expense-edit' expense.id %}" class="btn btn-secondary btn-sm">Edit</a></td>
-                        <td><a href="{% url 'delete-confirmation' expense.id %}" class="btn btn-danger btn-sm" >X</a></td>
-                    </tr>
-
-                    {% endfor %}
-
         </div>
     </div>
 
-    </tbody>
-    </table>
+    {% if expenses.count %}
+
+    <div class="app-table">
+        <table class="table table-stripped table-hover">
+            <thead>
+                <tr>
+                    <th>Amount ({{currency}})</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for expense in page_obj %}
+                <tr>
+                    <td>{{expense.amount}}</td>
+                    <td>{{expense.category}}</td>
+                    <td>{{expense.description}}</td>
+                    <td>{{expense.date}}</td>
+                    <td><a href="{% url 'expense-edit' expense.id %}" class="btn btn-secondary btn-sm">Edit</a></td>
+                    <td><a href="{% url 'delete-confirmation' expense.id %}" class="btn btn-danger btn-sm">X</a></td>
+                </tr>
+
+                {% endfor %}
+
+    </div>
+</div>
+
+</tbody>
+</table>
 </div>
 
 <p class="no-results" style="display: none;">No matching results</p>
