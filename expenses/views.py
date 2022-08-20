@@ -1,6 +1,6 @@
 import datetime
 import csv
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -9,6 +9,7 @@ import json
 from django.http import JsonResponse, HttpResponse
 from userpreferences.models import UserPreference
 from .models import Category, Expense
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
@@ -118,6 +119,17 @@ def delete_expense(request, id):
     expense.delete()
     messages.success(request, 'Expense deleted successfully')
     return redirect('expenses')
+
+
+def delete_confirmation(request, id):
+    expense = Expense.objects.get(pk=id)
+    context = {'expense': expense}
+
+    if request.method == "POST":
+        expense.delete()
+        return redirect('expenses')
+
+    return render(request, 'expenses/delete-confirmation.html', context)
 
 
 def expense_category_summary(request):

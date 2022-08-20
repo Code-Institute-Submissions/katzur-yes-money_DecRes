@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1 class="ui header">Delete Confirmation</h1>
+<p>Are you sure you want to delete this?</p>
+
+<form method="POST" action="{% url 'delete-confirmation' expense.id %}" class="ui form">
+    {% csrf_token %}
+
+    <a href="{% url 'expense-delete' expense.id %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'expenses' %}" type="button" class="btn btn-secondary">Cancel</button>
+</form>
+
+{% endblock %}
