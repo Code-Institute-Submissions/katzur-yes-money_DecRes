@@ -14,6 +14,8 @@ from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.template.loader import render_to_string
 from django.urls import reverse
 from django.contrib import auth
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 # Create your views here.
@@ -104,3 +106,30 @@ class LogoutView(View):
         auth.logout(request)
         messages.success(request, 'You have been successfully logged out')
         return redirect('index')
+
+
+class ContactView(View):
+    def get(self, request):
+        return render(request, 'authentication/contact.html')
+
+
+def contactForm(request):
+    if request.method == "POST":
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message = request.POST['message']
+
+#send an email
+        send_mail(
+            'YESMoney Contact Form message from' + message_name,
+            message,
+            message_email,
+            ['test@test.com'],
+        )
+
+        messages.success(request, 'Your message has been successfully sent!')
+        return redirect('index')
+        
+    else:
+        return render(request, 'authentication/contact.html')
+

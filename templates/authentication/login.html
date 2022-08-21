@@ -26,12 +26,13 @@
         <label class="form-check-label" id="checkboxDescription" for="showPasswordToggle">Show the password</label>
     </div>
 
-    <div class="container">
-        <span class="text-lead lead">Don't have an account?</span><a href="{% url 'register' %}">Register</a>
-    </div>
-
     <button class="w-100 btn btn-lg btn-success justify-content-center submit-btn" type="submit"
         value="Login">Login</button>
+
+        <div class="container mt-4 mb-4">
+            <span style="color: black!important;">Don't have an account?</span>
+            <a href="{% url 'register' %}" type="button" class="btn btn-primary btn-sm">Register</a>
+        </div>
     <p class="mt-5 mb-3 text-muted justify-content-center">&copy; YESMoney 2022</p>
 </form>
 

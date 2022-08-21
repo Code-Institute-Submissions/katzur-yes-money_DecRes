@@ -74,6 +74,10 @@
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
+
+        .nav-masthead .active {
+        border-bottom-color: black!important;
+        }
     </style>
 
 
@@ -81,26 +85,26 @@
     <link href="https://getbootstrap.com/docs/5.2/examples/cover/cover.css" rel="stylesheet">
 </head>
 
-<body class="d-flex h-100 text-center text-bg-dark text-bg-dark">
+<body class="d-flex h-100 text-center text-bg-light text-bg-light">
 
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         {% include 'partials/_messages.html' %}
         <header class="mb-auto">
             <div>
                 <h3 class="float-md-start mb-0 fs-3 lh-lg fw-bold font-monospace">
-                    <img src="https://res.cloudinary.com/katzur/image/upload/v1659833196/Logo_500x500_px_3_hjq83x.png"
-                        alt="YESMoney logo" width="100" height="100">
+                    <img src="https://res.cloudinary.com/katzur/image/upload/v1659794036/favicon_jqzlwt.png"
+                        alt="YESMoney logo" width="80px" height="80px" class="img-fluid">
                     YESMoney</h3>
-                <nav class="nav nav-masthead justify-content-center float-md-end ">
-                    <a class="nav-link fw-bold fs-5 mt-4 py-1 px-0 active" aria-current="page" href="index">Home</a>
-                    <a class="nav-link fw-bold fs-5 mt-4 py-1 px-0" href="#">Contact</a>
-                    <a class="nav-link fw-bold fs-5 mt-4 py-1 px-0" href="login">Login</a>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link fw-bold fs-5 mt-4 py-1 px-0 active" aria-current="page" href="index" style="color:black;">Home</a>
+                    <a class="nav-link fw-bold fs-5 mt-4 py-1 px-0" href="contact"  style="color:black;">Contact</a>
+                    <a class="nav-link fw-bold fs-5 mt-4 py-1 px-0" href="login"  style="color:black;">Login</a>
                 </nav>
             </div>
         </header>
 
         <main class="float-left">
-            <img src="https://res.cloudinary.com/katzur/image/upload/v1659834302/pexels-monstera-5849559_dcnkmi.jpg" alt="hero image" width="600" height="350" class="img-fluid">
+            <img src="https://res.cloudinary.com/katzur/image/upload/v1661034058/6425322-removebg-preview_heuwaa.png" alt="hero image" width="600" height="350" class="img-fluid">
             <h1>Effectively manage your budget.</h1>
             <p class="lead">This is your personal wallet - get a better control over your money for free.</p>
             <p class="lead">
