@@ -8,14 +8,13 @@ from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeError
-from django.core.mail import send_mail
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.template.loader import render_to_string
 from django.urls import reverse
 from django.contrib import auth
-from django.core.mail import send_mail
-from django.conf import settings
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -113,23 +112,22 @@ class ContactView(View):
         return render(request, 'authentication/contact.html')
 
 
-def contactForm(request):
+def contact(request):
     if request.method == "POST":
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
         message = request.POST['message']
 
-#send an email
         send_mail(
             'YESMoney Contact Form message from' + message_name,
             message,
             message_email,
             ['test@test.com'],
+            fail_silently=False,
         )
-
+        
         messages.success(request, 'Your message has been successfully sent!')
         return redirect('index')
         
     else:
         return render(request, 'authentication/contact.html')
-

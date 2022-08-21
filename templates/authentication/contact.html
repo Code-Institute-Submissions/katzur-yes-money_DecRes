@@ -81,6 +81,7 @@
                             <div class="col-md-6">
                                 <form class="mb-5" method="post" action="{% url 'contact' %}" name="contactForm">
                                     {% csrf_token %}
+                                    {{form.as_p}}
                                     <div class="row">
                                         <div class="col-md-12 form-group">
                                             <input type="text" class="form-control" name="message-name" id="name"
