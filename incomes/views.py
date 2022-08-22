@@ -6,6 +6,7 @@ from userpreferences.models import UserPreference
 import json
 from django.http import JsonResponse
 from .models import Source, Income
+import datetime
 
 
 # Create your views here.
@@ -112,3 +113,34 @@ def delete_income(request, id):
     income.delete()
     messages.success(request, 'Income removed')
     return redirect('income')
+
+
+def income_source_summary(request):
+    todays_date=datetime.date.today()
+    six_months_ago=todays_date-datetime.timedelta(days=30*6)
+    income = Income.objects.filter(owner=request.user, date__gte=six_months_ago, date__lte=todays_date)
+    finalrep = {
+
+    }
+
+    def get_source(income):
+        return income.source
+    source_list = list(set(map(get_source, income)))
+
+    def get_income_source_amount(source):
+        amount = 0
+        filtered_by_source = income.filter(source=source)
+
+        for item in filtered_by_source:
+            amount += item.amount
+        return amount
+
+    for x in income:
+        for y in source_list:
+            finalrep[y] = get_income_source_amount(y)
+
+    return JsonResponse({'income_source_data': finalrep}, safe=False)
+
+
+def stats_income_view(request):
+    return render(request, 'income/stats-income.html')

@@ -53,7 +53,7 @@ usernameField.addEventListener("keyup", (e) => {
 
     usernameSuccessOutput.style.display = "block";
 
-    usernameSuccessOutput.textContent = `Checking ${usernameVal}`;
+    usernameSuccessOutput.textContent = `Checked ${usernameVal}`;
 
     usernameField.classList.remove("is-invalid");
     feedbackArea.style.display = "none";
