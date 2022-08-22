@@ -4,10 +4,11 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from userpreferences.models import UserPreference
 import json
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from .models import Source, Income
 import datetime
 from django.shortcuts import get_object_or_404
+import csv
 
 
 # Create your views here.
@@ -156,3 +157,18 @@ def income_source_summary(request):
 
 def stats_income_view(request):
     return render(request, 'income/stats-income.html')
+
+
+def export_csv_income(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=Income' + str(datetime.datetime.now()) + '.csv'
+
+    writer = csv.writer(response)
+    writer.writerow(['Amount', 'Description', 'Source', 'Date'])
+
+    income = Income.objects.filter(owner=request.user)
+
+    for income in income:
+        writer.writerow([income.amount, income.description, income.source, income.date])
+
+    return response
