@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -7,6 +7,7 @@ import json
 from django.http import JsonResponse
 from .models import Source, Income
 import datetime
+from django.shortcuts import get_object_or_404
 
 
 # Create your views here.
@@ -113,6 +114,17 @@ def delete_income(request, id):
     income.delete()
     messages.success(request, 'Income removed')
     return redirect('income')
+
+
+def delete_confirmation_income(request, id):
+    income = Income.objects.get(pk=id)
+    context = {'income': income}
+
+    if request.method == "POST":
+        income.delete()
+        return redirect('income')
+
+    return render(request, 'income/delete-confirmation-income.html', context)
 
 
 def income_source_summary(request):

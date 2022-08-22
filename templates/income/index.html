@@ -59,6 +59,7 @@
                         <td>{{income.description}}</td>
                         <td>{{income.date}}</td>
                         <td><a href="{% url 'income-edit' income.id %}" class="btn btn-secondary btn-sm">Edit</a></td>
+                        <td><a href="{% url 'delete-confirmation-income' income.id %}" class="btn btn-danger btn-sm" >X</a></td>
                     </tr>
 
                     {% endfor %}
