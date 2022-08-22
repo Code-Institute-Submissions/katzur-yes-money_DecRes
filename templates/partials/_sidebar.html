@@ -11,12 +11,10 @@
             </li>
         </ul>
         <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="">
-                    <span data-feather="home" class="align-text-bottom"></span>
-                    HOME
-                </a>
-            </li>
+            <h6
+                class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+                <span>WALLET</span>
+            </h6>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'expenses' %}"><img
                         src="https://res.cloudinary.com/katzur/image/upload/v1661201262/icon-coin-removebg-preview_ynyyol.png"
@@ -70,12 +68,13 @@
         <br>
         <br>
         </h6>
-        <ul class="nav flex-column mb-2">
+
+        <ul class="nav flex-column mb-2 align-items-center">
             <li class="nav-item">
                 <form action="{% url 'logout' %}" method="POST">
                     {% csrf_token %}
-                    <input class="text text-capitalize btn btn-outline-secondary"
-                        style="margin-right: 1em; margin-left: 1em;" type="submit" value="Sign out">
+                    <input class="text text-capitalize btn btn-outline-secondary" type="submit" value="Sign out"
+                        style="border: 2px solid; padding: 10px; box-shadow: 6px 4px; margin-bottom: 1em; color: black;">
                 </form>
             </li>
         </ul>

@@ -16,12 +16,12 @@
                 </ol>
             </nav>
         </div>
-        <div class="col-md-2 d-inline">
-            <a href="{% url 'export-csv-income' %}" class="btn btn-secondary" style="margin-right: 1.5em;">Export CSV</a>
-        </div>
-        <div class="col-md-2">
-            <a href="{% url 'add-income' %}" class="btn btn-success">Add Income</a>
-        </div>
+    </div>
+    <div class="col-md-2 d-inline">
+        <a href="{% url 'export-csv-income' %}" class="btn btn-secondary" style="margin-right: 1.5em;">Export CSV</a>
+    </div>
+    <div class="col-md-2 d-inline">
+        <a href="{% url 'add-income' %}" class="btn btn-success">Add Income</a>
     </div>
 
     <div class="container mt-4 mb-4">
@@ -61,7 +61,8 @@
                         <td>{{income.description}}</td>
                         <td>{{income.date}}</td>
                         <td><a href="{% url 'income-edit' income.id %}" class="btn btn-secondary btn-sm">Edit</a></td>
-                        <td><a href="{% url 'delete-confirmation-income' income.id %}" class="btn btn-danger btn-sm" >X</a></td>
+                        <td><a href="{% url 'delete-confirmation-income' income.id %}"
+                                class="btn btn-danger btn-sm">X</a></td>
                     </tr>
 
                     {% endfor %}
@@ -71,6 +72,7 @@
 
         <p class="no-results" style="display: none;">No matching results</p>
         <div class="table-output">
+
         </div>
 
 
@@ -95,7 +97,7 @@
 
 
             </ul>
-            {% endif %}
+        {% endif %}
         </div>
     </div>
 </div>
@@ -103,8 +105,6 @@
 
 </div>
 
-<script src="{% static 'js/searchIncome.js' %}">
-
-</script>
+<script src="{% static 'js/searchIncome.js' %}"></script>
 
 {% endblock content %}
