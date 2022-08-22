@@ -15,7 +15,7 @@
 
     <div class="form-floating justify-content-center">
         <input type="text" name="username" class="form-control form-control-sm" id="usernameField"
-            placeholder="Username" value="{{fieldValues.username}}">
+            placeholder="Username" value="{{fieldValues.username}}" required>
         <label for="usernameField">Username</label>
     </div>
     <div class="invalid_feedback invalid-feedback" style="display:none">
@@ -23,14 +23,14 @@
     <p class="text-sm text-success usernameSuccessOutput"></p>
     <div class="form-floating justify-content-center">
         <input type="email" name="email" class="form-control form-control-sm" id="emailField" placeholder="Email"
-            value="{{fieldValues.email}}">
+            value="{{fieldValues.email}}" required>
         <label for="emailField">Email address</label>
     </div>
     <div class="EmailFeedbackArea invalid-feedback" style="display:none">
     </div>
     <div class="form-floating justify-content-center">
         <input type="password" name="password" class="form-control form-control-sm" id="passwordField"
-            placeholder="Password">
+            placeholder="Password" required>
         <label for="passwordField">Password</label>
     </div>
 

@@ -47,14 +47,10 @@ class RegistrationView(View):
         return render(request, 'authentication/register.html')
 
     def post(self, request):
-        # GET USER DATA
-        # VALIDATE
-        # CREATE A USER ACCOUNT
-
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
-
+        
         context = {
             'fieldValues': request.POST
         }
