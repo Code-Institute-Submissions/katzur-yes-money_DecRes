@@ -7,16 +7,16 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="">
                             <span data-feather="home" class="align-text-bottom"></span>
-                            Dashboard
+                            HOME
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'expenses' %}">
+                        <a class="nav-link" href="{% url 'expenses' %}"><img src="https://res.cloudinary.com/katzur/image/upload/v1661201262/icon-coin-removebg-preview_ynyyol.png" width="24px" height="24px" alt="expense-icon">
                             Expenses
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'income' %}">
+                        <a class="nav-link" href="{% url 'income' %}"><img src="https://res.cloudinary.com/katzur/image/upload/v1661201262/piggybank-icon-removebg-preview_k2bhm7.png" width="30px" height="24px" alt="income-icon">
                             Income
                         </a>
                     </li>
@@ -28,13 +28,13 @@
                 </h6>
                 <ul class="nav flex-column mb-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'stats' %}">
-                            Expenses Summary
+                        <a class="nav-link" href="{% url 'stats' %}"><img src="https://res.cloudinary.com/katzur/image/upload/v1661201262/chart-pie-icon-removebg-preview_sutjsd.png" width="34px" height="24px" alt="chart-icon">
+                            Expenses chart
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'stats-income' %}">
-                            Income Summary
+                        <a class="nav-link" href="{% url 'stats-income' %}"><img src="https://res.cloudinary.com/katzur/image/upload/v1661201262/chart-pie-icon-removebg-preview_sutjsd.png" width="34px" height="24px" alt="chart-icon">
+                            Income chart
                         </a>
                     </li>
                 </ul>
@@ -45,9 +45,20 @@
             </h6>
             <ul class="nav flex-column mb-2">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'preferences' %}">
+                    <a class="nav-link" href="{% url 'preferences' %}"><img src="https://res.cloudinary.com/katzur/image/upload/v1661201262/choice-money-icon-removebg-preview_lcxstn.png" width="30px" height="24px" alt="prefference-icon">
                         Currency preference
                     </a>
+                </li>
+            </ul>
+            <br>
+            <br>
+            </h6>
+            <ul class="nav flex-column mb-2">
+                <li class="nav-item">
+                    <form action="{% url 'logout' %}" method="POST">
+                        {% csrf_token %}
+                        <input class="text text-capitalize btn btn-outline-secondary" style="margin-right: 1em; margin-left: 1em;" type="submit" value="Sign out">
+                    </form>
                 </li>
             </ul>
             </div>
