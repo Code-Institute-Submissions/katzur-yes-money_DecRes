@@ -1,65 +1,83 @@
 {% load static %}
 
 
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-2">
-            <div class="position-sticky pt-3 sidebar-sticky">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">
-                            <span data-feather="home" class="align-text-bottom"></span>
-                            HOME
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'expenses' %}"><img src="https://res.cloudinary.com/katzur/image/upload/v1661201262/icon-coin-removebg-preview_ynyyol.png" width="24px" height="24px" alt="expense-icon">
-                            Expenses
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'income' %}"><img src="https://res.cloudinary.com/katzur/image/upload/v1661201262/piggybank-icon-removebg-preview_k2bhm7.png" width="30px" height="24px" alt="income-icon">
-                            Income
-                        </a>
-                    </li>
-                </ul>
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-2">
+    <div class="position-sticky pt-3 sidebar-sticky" style="margin-top: 2em;">
+        <ul class="nav flex-column mb-4" style="align-content: center;">
+            <li class="nav-item" style="border: 2px solid; padding: 10px; box-shadow: 6px 4px; margin-bottom: 1em;">
+                <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href=""><img
+                        src="https://res.cloudinary.com/katzur/image/upload/v1659794036/favicon_jqzlwt.png" width="30px"
+                        alt="YESMoney logo"> YESMoney</a>
+            </li>
+        </ul>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="">
+                    <span data-feather="home" class="align-text-bottom"></span>
+                    HOME
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'expenses' %}"><img
+                        src="https://res.cloudinary.com/katzur/image/upload/v1661201262/icon-coin-removebg-preview_ynyyol.png"
+                        width="24px" height="24px" alt="expense-icon">
+                    Expenses
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'income' %}"><img
+                        src="https://res.cloudinary.com/katzur/image/upload/v1661201262/piggybank-icon-removebg-preview_k2bhm7.png"
+                        width="30px" height="24px" alt="income-icon">
+                    Income
+                </a>
+            </li>
+        </ul>
 
-                <h6
-                    class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
-                    <span>SUMMARY</span>
-                </h6>
-                <ul class="nav flex-column mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'stats' %}"><img src="https://res.cloudinary.com/katzur/image/upload/v1661201262/chart-pie-icon-removebg-preview_sutjsd.png" width="34px" height="24px" alt="chart-icon">
-                            Expenses chart
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'stats-income' %}"><img src="https://res.cloudinary.com/katzur/image/upload/v1661201262/chart-pie-icon-removebg-preview_sutjsd.png" width="34px" height="24px" alt="chart-icon">
-                            Income chart
-                        </a>
-                    </li>
-                </ul>
+        <h6
+            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+            <span>SUMMARY</span>
+        </h6>
+        <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'stats' %}"><img
+                        src="https://res.cloudinary.com/katzur/image/upload/v1661201262/chart-pie-icon-removebg-preview_sutjsd.png"
+                        width="34px" height="24px" alt="chart-icon">
+                    Expenses chart
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'stats-income' %}"><img
+                        src="https://res.cloudinary.com/katzur/image/upload/v1661201262/chart-pie-icon-removebg-preview_sutjsd.png"
+                        width="34px" height="24px" alt="chart-icon">
+                    Income chart
+                </a>
+            </li>
+        </ul>
 
-                <h6
-                class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
-                <span>SETTINGS</span>
-            </h6>
-            <ul class="nav flex-column mb-2">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'preferences' %}"><img src="https://res.cloudinary.com/katzur/image/upload/v1661201262/choice-money-icon-removebg-preview_lcxstn.png" width="30px" height="24px" alt="prefference-icon">
-                        Currency preference
-                    </a>
-                </li>
-            </ul>
-            <br>
-            <br>
-            </h6>
-            <ul class="nav flex-column mb-2">
-                <li class="nav-item">
-                    <form action="{% url 'logout' %}" method="POST">
-                        {% csrf_token %}
-                        <input class="text text-capitalize btn btn-outline-secondary" style="margin-right: 1em; margin-left: 1em;" type="submit" value="Sign out">
-                    </form>
-                </li>
-            </ul>
-            </div>
-        </nav>
+        <h6
+            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+            <span>SETTINGS</span>
+        </h6>
+        <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'preferences' %}"><img
+                        src="https://res.cloudinary.com/katzur/image/upload/v1661201262/choice-money-icon-removebg-preview_lcxstn.png"
+                        width="30px" height="24px" alt="prefference-icon">
+                    Currency preference
+                </a>
+            </li>
+        </ul>
+        <br>
+        <br>
+        </h6>
+        <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+                <form action="{% url 'logout' %}" method="POST">
+                    {% csrf_token %}
+                    <input class="text text-capitalize btn btn-outline-secondary"
+                        style="margin-right: 1em; margin-left: 1em;" type="submit" value="Sign out">
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>

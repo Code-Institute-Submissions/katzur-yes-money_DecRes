@@ -19,7 +19,6 @@
     </script>
 
     <style>
-
         .offset-lg-1 {
             margin-left: 1em !important;
         }
@@ -75,39 +74,39 @@
         }
 
         .position-absolute {
-        position: sticky!important;
+            position: sticky !important;
         }
 
         .navbar-brand {
-            background-color: transparent!important;
-            box-shadow: none!important;
+            background-color: transparent !important;
+            box-shadow: none !important;
         }
 
         .shadow {
-            box-shadow: none!important;
+            box-shadow: none !important;
         }
 
+        .bg-light {
+            background-color: white!important;
+        }
     </style>
 </head>
 
 <body>
-    <header class="navbar navbar-light sticky-top bg-light d-flex flex-nowrap shadow" style="border-bottom: 1px solid; margin-bottom: 1em;">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href=""><img src="https://res.cloudinary.com/katzur/image/upload/v1659794036/favicon_jqzlwt.png" width="30px" alt="YESMoney logo"> YESMoney</a>
+    <header class="navbar navbar-light sticky-top bg-light d-flex flex-nowrap shadow"
+        style="margin-bottom: 1em; margin: 0.5em;">
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
-            aria-label="Toggle navigation">
+            aria-label="Toggle navigation" style="margin: 1em;">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <form class="nav-item text-nowrap" style="font-family: sans-serif; color: black; letter-spacing: 1px; font-size: large;">
+        <form class="nav-item text-nowrap"
+            style="font-family: sans-serif; color: black; letter-spacing: 1px; font-size: x-large;">
             <span class="nav-link px-3" href="">
                 Hello, <strong> {{request.user.username}} </strong>!
             </span>
         </form>
-            <form action="{% url 'logout' %}" method="POST">
-                {% csrf_token %}
-                <input class="text text-capitalize btn btn-secondary" style="margin-right: 1em;" type="submit" value="Sign out">
-            </form>
     </header>
 
     <div class="container-fluid">
