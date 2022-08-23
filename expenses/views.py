@@ -14,15 +14,14 @@ import datetime
 
 
 def search_expenses(request):
-    url_parameter = request.GET.get("q")
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
-        expenses = Expense.objects.filter(
-            amount__istartswith=search_str, owner=request.User) | Expense.objects.filter(
-            date__istartswith=search_str, owner=request.User) | Expense.objects.filter(
-            description__icontains=search_str, owner=request.User) | Expense.objects.filter(
-            category__icontains=search_str, owner=request.User)
-        data = expenses.values()
+        expense = Expense.objects.filter(
+            amount__istartswith=search_str, owner=request.user) | Expense.objects.filter(
+            date__istartswith=search_str, owner=request.user) | Expense.objects.filter(
+            description__icontains=search_str, owner=request.user) | Expense.objects.filter(
+            category__icontains=search_str, owner=request.user)
+        data = expense.values()
         return JsonResponse(list(data), safe=False)
 
 

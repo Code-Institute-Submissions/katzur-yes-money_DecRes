@@ -16,20 +16,16 @@
                 </ol>
             </nav>
         </div>
-    
-    <div class="container">
-        <div class="col-md-2 d-inline">
-            <a href="{% url 'export-csv' %}" class="btn btn-secondary" style="margin-right: 1.5em;">Export CSV</a>
-        </div>
-        <div class="col-md-2 d-inline">
-            <a href="{% url 'add-expense' %}" class="btn btn-success">Add Expense</a>
-        </div>
     </div>
+    <div class="col-md-2 d-inline">
+        <a href="{% url 'export-csv' %}" class="btn btn-secondary" style="margin-right: 1.5em;">Export CSV</a>
+    </div>
+    <div class="col-md-2 d-inline">
+        <a href="{% url 'add-expense' %}" class="btn btn-success">Add Expense</a>
     </div>
 
     <div class="container mt-4 mb-4">
         {% include 'partials/_messages.html' %}
-        {% if expenses.count %}
 
         <div class="row">
             <div class="col-md-8"></div>
@@ -42,13 +38,14 @@
             </div>
         </div>
 
+        {% if expenses.count %}
 
         <div class="app-table">
             <table class="table table-stripped table-hover">
                 <thead>
                     <tr>
                         <th>Amount ({{currency}})</th>
-                        <th>Category</th>
+                        <th>Categoty</th>
                         <th>Description</th>
                         <th>Date</th>
                         <th></th>
@@ -64,7 +61,8 @@
                         <td>{{expense.description}}</td>
                         <td>{{expense.date}}</td>
                         <td><a href="{% url 'expense-edit' expense.id %}" class="btn btn-secondary btn-sm">Edit</a></td>
-                        <td><a href="{% url 'delete-confirmation' expense.id %}" class="btn btn-danger btn-sm" >X</a></td>
+                        <td><a href="{% url 'delete-confirmation' expense.id %}"
+                                class="btn btn-danger btn-sm">X</a></td>
                     </tr>
 
                     {% endfor %}
@@ -87,7 +85,7 @@
 
                 <tbody class="table-body">
 
-                    
+
                 </tbody>
             </table>
         </div>
@@ -116,11 +114,12 @@
             </ul>
             {% endif %}
         </div>
-
-
     </div>
 </div>
 
-<script type="text/javascript" src="{% static 'js/searchExpenses.js' %}"></script>
-</script>
+
+</div>
+
+<script src="{% static 'js/searchExpenses.js' %}"></script>
+
 {% endblock content %}
