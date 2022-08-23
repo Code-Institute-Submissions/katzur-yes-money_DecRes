@@ -50,7 +50,7 @@ class RegistrationView(View):
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
-        
+
         context = {
             'fieldValues': request.POST
         }
