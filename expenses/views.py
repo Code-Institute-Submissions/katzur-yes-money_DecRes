@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.http import JsonResponse, HttpResponse
 from .models import Category, Expense
 from django.contrib import messages
 from django.core.paginator import Paginator
 import json
 import csv
-from django.http import JsonResponse, HttpResponse
 from userpreferences.models import UserPreference
 import datetime
 
@@ -14,6 +14,7 @@ import datetime
 
 
 def search_expenses(request):
+    url_parameter = request.GET.get("q")
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
         expenses = Expense.objects.filter(
