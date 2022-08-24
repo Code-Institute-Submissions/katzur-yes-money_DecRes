@@ -89,6 +89,35 @@
         .bg-light {
             background-color: white !important;
         }
+
+        /* statistics details*/
+
+        .section-stats {
+            margin-bottom: 2em;
+        }
+
+        .section-stats .card-panel {
+            margin: 2em;
+        }
+
+        .section-stats h1 {
+            font-size: 2vw;
+        }
+
+        @media(max-width: 992px) {
+            .section-stats h1 {
+                font-size: calc(16px + 6vw);
+            }
+        }
+
+        .cards {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .cards:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 

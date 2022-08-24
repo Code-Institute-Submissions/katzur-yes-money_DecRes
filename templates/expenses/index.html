@@ -17,11 +17,35 @@
             </nav>
         </div>
     </div>
+    <!-- <section class="section section-stats">
+        <div class="row">
+            <div class="col 14 s12 m12 cards">
+                <div class="card-panel rounded hover-zoom" style="border: 1px solid; padding: 10px; box-shadow: 3px 2px; margin-bottom: 1em;">
+                    <h6 class="bold">TOTAL EXPENSES ({{currency}})</h6>
+                    <h1 class="bold">{{ expense.total_expenses }}</h1>
+                </div>
+            </div>
+    
+            <div class="col 14 s12 m12 cards">
+                <div class="card-panel rounded" style="border: 1px solid; padding: 10px; box-shadow: 3px 2px; margin-bottom: 1em;">
+                    <h6 class="bold">THIS MONTH EXPENSES ({{currency}})</h6>
+                    <h1 class="bold">{{ expense.monthly_expenses}}</h1>
+                </div>
+            </div>
+    
+            <div class="col 14 s12 m12 cards">
+                <div class="card-panel rounded" style="border: 1px solid; padding: 10px; box-shadow: 3px 2px; margin-bottom: 1em;">
+                    <h6 class="bold">TOTAL EXPENSES COUNT</h6>
+                    <h1 class="bold">{{ expense.total_transactions }}</h1>
+                </div>
+            </div>
+        </div>
+    </section> -->
     <div class="col-md-2 d-inline">
-        <a href="{% url 'export-csv' %}" class="btn btn-secondary" style="margin-right: 1.5em;">Export CSV</a>
+        <a href="{% url 'export-csv' %}" class="btn btn-outline-secondary" style="margin-right: 1.5em;">Export CSV</a>
     </div>
     <div class="col-md-2 d-inline">
-        <a href="{% url 'add-expense' %}" class="btn btn-success">Add Expense</a>
+        <a href="{% url 'add-expense' %}" class="btn btn-success">+ Add Expense</a>
     </div>
 
     <div class="container mt-4 mb-4">
@@ -62,8 +86,8 @@
                         <td>{{expense.description}}</td>
                         <td>{{expense.date}}</td>
                         <td><a href="{% url 'expense-edit' expense.id %}" class="btn btn-secondary btn-sm">Edit</a></td>
-                        <td><a href="{% url 'delete-confirmation' expense.id %}"
-                                class="btn btn-danger btn-sm">X</a></td>
+                        <td><a href="{% url 'delete-confirmation' expense.id %}" class="btn btn-danger btn-sm">X</a>
+                        </td>
                     </tr>
 
                     {% endfor %}
@@ -117,8 +141,6 @@
         </div>
     </div>
 </div>
-
-
 </div>
 
 <script src="{% static 'js/searchExpenses.js' %}"></script>
