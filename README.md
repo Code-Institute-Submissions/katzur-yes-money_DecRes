@@ -157,5 +157,88 @@ I decided to stay mostly with default fonts that came with Bootstrap CSS styling
 
 ### <ins>Icons and images</ins>
 All icons used for YESMoney come from [IconScout](https://iconscout.com/)
+
 All images used for YESMoney come from [Freepik](https://www.freepik.com/)
+
+## Features
+YESMoney is designed as a webpage and the functionality and features were selected based on the Kanban Board and MoSCoW prioritization (applied labels to User Stories). During the process of the page creation I was able to decide what needs to be implemented, and what set of features can be potentially added in the future.
+
+### <ins>Exisiting Features</ins>
+YESMoney currently allows the User to go through the User authentication: register the account, login to their personal wallet. Unregistered User can send the feedback or comments through the contact form, but the rest of the features require authentication. Users must have an account in order to use the wallet features, which allow them to create, edit, delete and view their incomes and expenses.
+This way the User can keep track of their budget and monitor incomes and expenses over time by adding them to the table, generating CSV files, searching and viewing the chart.
+
+<details> <summary> Homepage </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661437761/2022-08-25_15_29_07-YESMoney_qcb2d0.png">
+</details>
+Main page that allows the User to easily navigate through available options - contact, login, register. Once the User is loggin out of the wallet - they're brought to this page. Once the contact form is sent - the User is also brough to this page.
+
+<details> <summary> Contact </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661438017/2022-08-25_15_33_17-YESMoney_Contact_Form_vjivec.png">
+</details>
+Allows the User to send a feedback or other type of message to the site creator. Contains social media information and links to other available pages within YESMoney.
+
+<details> <summary> Login </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661439163/2022-08-25_15_52_14-YESMoney_g3ie44.png">
+</details>
+Allows the User to log into their wallet. Has additional function to show the password, and small collapsable navbar on the top.
+
+<details> <summary> Register </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661439301/2022-08-25_15_54_46-YESMoney_nucale.png">
+</details>
+Allows the User to register their account. Has additional function to show the password, button for registered Users to sign in, and small collapsable navbar on the top.
+
+<details> <summary> Main wallet page </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661439390/2022-08-25_15_56_13-YESMoney_w97rcn.png">
+</details>
+Looks nearly identical for expenses and incomes. Left pane contains a sidebar with links and option to log out. Top navbar contains greeting and displays username. Right pane contains main table with expenses/ incomes, buttons to edit and delete the entry. On the top above the table there are buttons to add new entry and download CSV file. Below the table there's a handy pagination that keeps 5 entries on each page. Additionally page has a search bar that allows the User to browse for expenses/ incomes. Table itself has option to sort entries by each table column header.
+
+<details> <summary> Charts </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661439780/2022-08-25_16_02_43-YESMoney_ylbler.png">
+</details>
+Looks nearly identical for expenses and incomes. Left pane contains a sidebar with links and option to log out. Top navbar contains greeting and displays username. Right pane contains a visualization of incomes/ expenses in form of doughnut chart for the last 6 months. It allows the User to interact - by clicking on the category/ source - User can decide which expenses they want to display. After hovering over certain color on the chart - it summarize the amount spent/ gained within a certain category/ source.
+
+<details> <summary> Currency preference </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661439968/2022-08-25_16_05_53-YESMoney_zp0nl1.png">
+</details>
+This page allows the User to personalize their wallet by selecting User's chosen currency. Based on this information - the other pages get the information about valid currency and autopopulate that information in the table. 
+
+<details> <summary> Delete confirmation </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661440239/2022-08-25_16_10_25-YESMoney_vqgg3l.png">
+</details>
+This page displays once the User clicks on the red X button in order to delete the expense/ income entry. It confirms with the User that it was an intended action, not a mistake.
+
+<details> <summary> Add expense/ income </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441100/2022-08-25_16_24_36-YESMoney_u1zpug.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441296/2022-08-25_16_27_55-YESMoney_kcdbda.png">
+</details>
+This page allows the User to add income/ expense. Once entry added - the information will display within the table on the main page for income/ expenses and will be added to the graph in the summary.
+
+<details> <summary> Edit income/ expense </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441437/2022-08-25_16_30_19-YESMoney_ztkxb8.png">
+</details>
+This page allows the User to edit income/ expense and looks nearly identical for both. Once entry edited - the information will change and display with new values within the table on the main page for income/ expenses and change will be reflected within the graph in the summary. Additionally this page has a 'Delete' button that allows the User to remove the entry from the database.
+
+<details> <summary> Messages </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441805/2022-08-25_16_36_29-YESMoney_g14vay.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441805/2022-08-25_16_35_39-YESMoney_kqj1t8.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441805/2022-08-25_16_34_40-YESMoney_beruqf.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441805/2022-08-25_16_35_51-YESMoney_kaq6yh.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441805/2022-08-25_16_35_25-YESMoney_wzfedc.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441805/2022-08-25_16_35_06-YESMoney_bdqzkl.png">
+</details>
+Page has dedicated pop-up messages reflecting User's actions - it gives the User a feedback what the actions mean. Examples can be found here.
+
+<details> <summary> Admin Page </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661442218/2022-08-25_16_42_21-https___8000-katzur-yesmoney-wrhcvxduy7m.ws-eu62.gitpod.io_admin__uxs1wx.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661442218/2022-08-25_16_42_44-https___8000-katzur-yesmoney-wrhcvxduy7m.ws-eu62.gitpod.io_admin_login__next__ad_wofucv.png">
+</details>
+Page only available for Site Administrators once accessing https://yes-money.herokuapp.com/admin Allows the Admins to view, modify and delete Users, Expenses and Categories, Incomes and Sources. 
+
+### <ins>Future Features</ins>
+* Option for the Users to reset the password by email link
+* Authentication of newly registered Users by email link
+* Viewing the income on the timeline, where User can select time period (weekly, monthly, yearly expenses/ incomes)
+* Add additional graphs for better income/ expense view (graphs: lines, bars)
+* Add additional output boxes displaying overall spending/ income, this month's spending/ income, and amount of transactions
+
 
