@@ -160,10 +160,10 @@ All icons used for YESMoney come from [IconScout](https://iconscout.com/)
 
 All images used for YESMoney come from [Freepik](https://www.freepik.com/)
 
-## Features
+# Features
 YESMoney is designed as a webpage and the functionality and features were selected based on the Kanban Board and MoSCoW prioritization (applied labels to User Stories). During the process of the page creation I was able to decide what needs to be implemented, and what set of features can be potentially added in the future.
 
-### <ins>Exisiting Features</ins>
+## Exisiting Features
 YESMoney currently allows the User to go through the User authentication: register the account, login to their personal wallet. Unregistered User can send the feedback or comments through the contact form, but the rest of the features require authentication. Users must have an account in order to use the wallet features, which allow them to create, edit, delete and view their incomes and expenses.
 This way the User can keep track of their budget and monitor incomes and expenses over time by adding them to the table, generating CSV files, searching and viewing the chart.
 
@@ -234,7 +234,7 @@ Page has dedicated pop-up messages reflecting User's actions - it gives the User
 </details>
 Page only available for Site Administrators once accessing https://yes-money.herokuapp.com/admin Allows the Admins to view, modify and delete Users, Expenses and Categories, Incomes and Sources. 
 
-### <ins>Future Features</ins>
+## Future Features
 * Option for the Users to reset the password by email link
 * Authentication of newly registered Users by email link
 * Viewing the income on the timeline, where User can select time period (weekly, monthly, yearly expenses/ incomes)
@@ -243,8 +243,8 @@ Page only available for Site Administrators once accessing https://yes-money.her
 * History of User's actions
 
 
-## Technologies Used
-### <ins>Languages and Frameworks</ins>
+# Technologies Used
+## Languages and Frameworks
 * HTML
 * CSS
 * JavaScript
@@ -252,7 +252,7 @@ Page only available for Site Administrators once accessing https://yes-money.her
 * Django - Python Framework used to create the project.
 * Bootstrap - CSS framework used for designing the project.
 
-### <ins>Other Technologies</ins>
+## Other Technologies
 * DevTools - help fix problem areas and identify the errors.
 * Heroku - project deployment.
 * PostgreSQL (Heroku) - database used through Heroku.
@@ -264,7 +264,7 @@ Page only available for Site Administrators once accessing https://yes-money.her
 * Diagram.net - database diagram schema creation
 * [Sortable](https://github.com/tofsjonas/sortable) - Vanilla JavaScript table sort
 
-### <ins>Content</ins>
+## Content
 * [E-wallet idea](https://pl.pinterest.com/pin/293859944448506091/) - found on Pinterest in design suggestions
 * Django tutorial series from [Cryce Truly](https://www.youtube.com/c/CryceTruly) - absolutely great content teaching basic Django and JavaScript/ Ajax in context of building financial websites and user authentication functionality
 * Code Institute walkthrough project ['I think therefore I blog'](https://github.com/Code-Institute-Solutions/Django3blog) - great sorece of information how to start Django project and how to move with project configuration
@@ -277,11 +277,155 @@ Page only available for Site Administrators once accessing https://yes-money.her
 * [Codepen - Sliding Diagonals Background](https://codepen.io/chris22smith/pen/RZogMa) - for interesting background effect for Login and Registration page
 * [Article about User Stories by Anastasiia Kalachova](https://www.altamira.ai/blog/difference-between-epics-vs-user-stories/) - explaining difference between epics and user stories
 * [Freepik](https://www.freepik.com/) - beautiful free vector images from [Storyset](https://www.freepik.com/author/stories)
-* [Tutorial on contact forms](https://www.youtube.com/watch?v=1ihn3iRXtsY&t=902s&ab_channel=djangotutorials) from Djangotutorials
+* [Tutorial on contact forms functionality](https://www.youtube.com/watch?v=1ihn3iRXtsY&t=902s&ab_channel=djangotutorials) from Djangotutorials
 * Color pallete creator and contrast checker were from on [Coolors](https://coolors.co/)
-* The logo and about us animated image were created on [VistaCreate](https://create.vista.com/home/)
+* The logo was created on [VistaCreate](https://create.vista.com/home/)
 
+# Testing
 
+# Deployment
+## Forking The GitHub Repository
+To use this code and make changes without affecting the original code you can do what is called 'Forking the repository'. 
+By forking this repository you are given a copy of the code at that moment in time that you can use freely. 
+To fork this repository you need to follow the following few steps:
+
+1. Create an account or log into your existing GitHub account.
+2. Navigate to the [Repository](https://github.com/katzur/yes-money), you are wanting to fork.
+3. In the upper-right of the repository, click the 'Fork' button.
+4. A copy of the Repository will now be available within your repositories.
+
+You will now have a copy of the code available to clone and work on without affecting the original code.
+
+## Cloning the Project.
+To make a local clone of the project follow these steps:
+
+1. Log into your GitHub account.
+2. Navigate to the [Repository](https://github.com/katzur/yes-money).
+3. In the upper section of the repository click the drop-down option: 'Code'.
+4. Ensure HTTPS is selected and click the clipboard on the right of the URL to copy it.
+5. Open a new workspace in GitPod.
+6. Open GitBash. In the bash terminal type 'git clone [copy url here from step 4]'
+7. Press enter - the IDE will clone and download the repo.
+8. GitBash will clone the repository into this directory.
+9. Optionally type: 'python3 manage.py runserver' to host the website locally - it won't run the python file, only allow you see how it looks.
+10. To use the required libraries: type in the console: pip3 install -r requirements.txt.
+11. To create a web-app from the repo, follow the instructions in "Heroku App Deployment".
+
+## GitHub Desktop App
+1. Log in to your GitHub account or create an account.
+2. Navigate to the [Repository](https://github.com/katzur/yes-money).
+3. Select the 'Code' button above the file list on the right had side.
+4. Select 'Open with GitHub Desktop'
+5. Install GitHub Desktop Application.
+6. The repo will be copied locally onto your machine.
+7. If you want to create a web-app from the repo please follow the instructions in "Heroku App Deployment"
+
+## Download and extract the zip directly from GitHub
+1. Log in to your GitHub account
+2. Navigate to the [Repository](https://github.com/katzur/yes-money)
+3. Select the 'Code' button above the file list on the right had side
+4. Select 'Download Zip'
+5. Once you have the Zip downloaded, open it with your preferred file decompression software
+6. You can then drag and drop the files from the folder into your chosen IDE or view/edit them on your local machine
+7. In the console, run: pip install -r requirements.txt
+8. If you want to create a web-app from the repo please follow the instructions in "Project Deployment"
+
+## Heroku App Deployment.
+1. Create the GitPod repo from the [CI Template](https://github.com/Code-Institute-Org/gitpod-full-template) via the GitPod button in GitHub.
+2. Create an account or log into your existing Heroku account.
+3. Click on: NEW in the top right corner and choose create a new app.
+4. Enter a unique name for the Heroku app.
+5. Click on: Create App.
+6. Add Heroku PostgreSQL add-on in the Resources tab.
+7. Once the app is built, navigate to "Settings" and scroll down to "Config Vars". 
+    * Here the database URL is stored, it is the connection to the database, so this must be copied and stored within env.py as a root level file.
+    
+    ```python
+    DATABASE_URL - linking to PostgrSQL
+    SECRET_KEY - needs to be created within the projects env.py file on GitPod, then added to the Config Vars on Heroku.
+    DISABLE_COLLECTSTATIC = 1 - temporary solution to enable deployment without any static files.
+    PORT = 8000
+    CLOUDINARY_URL - copied from Cloudinary Dashboard API Environment variable and pasted starting from 'cloudinary://...'
+    ```
+
+8. Within the settings.py in the workspace file you need to import several libraries:
+
+    ```python
+    import os
+    import dj_database_url
+    from django.contrib.messages import constants as messages
+    if os.path.isfile('env.py'):
+    import env
+    ```
+9. In env.py add the following:
+
+    ```python
+    os.environ["DATABASE_URL"] = "postgres://..."
+    os.environ["SECRET_KEY"] = <KEY SET UP WITHIN CONFIG VARS IN HEROKU>
+    os.environ ["CLOUDINARY_URL"] = "cloudinary://..." >> remove the first part of the url provided from the Cloudinary Dashboard, otherwise it'll fail.
+    ```
+9. Replace the not secured secret key with os.environ.get('SECRET_KEY)', that we set witin the env.py file
+10. Add the following python dictionary:
+
+    ```python
+    DATABASES = { 'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
+    ```
+
+11. Tell Django where to store the madia and static files in settings.py:
+    * Add Cloudinary in apps:
+
+    ```python
+    'cloudinary_storage',
+    'cloudinary',
+    ```
+
+    * Change the static files settings to link it to Cloudinary:
+
+    ```python
+    MEDIA_URL = '/media/'
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+    STATIC_URL = '/static/'
+    STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
+    ```
+
+13. In settings.py, under BASE_DIR add a templates directory and then scroll down to TEMPLATES and add the templates directory variable to 'DIRS':
+
+    ```python
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    TEMLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+    TEMPLATES = [
+        'DIRS' : [TEMPLATES_DIR]
+    ]
+    ```
+
+14. Add the hostname in settings.py:
+
+    ```python
+    ALLOWED_HOSTS = ['<HTTPS HEROKU APP ADDRESS>', 'localhost']
+    ```
+
+15. Create a Procfile, so Heroku knows how to run the project. In Procfile add:
+    
+    ```python
+    web: gunicorn APP-NAME.wsgi
+    ```
+ 
+16. In Heroku navigate to the "Deploy" section.
+    * Scroll down to "Deployment Method" and select "GitHub".
+    * Authorize the connection of Heroku to GitHub.
+    * Search for your GitHub repository name, and select the correct repository.
+    * For Deployment there are two options, Automatic Deployments or Manual.
+        - Automatic Deployment: This will prompt Heroku to re-build your app each time you push your code to GitHub.
+        - Manual Deployment: This will only prompt Heroku to build your app when you manually tell it to do so. 
+17. Ensure the correct branch is selected "master/Main", and select the deployment method that you desire.
+18. Before deploying the final draft of your project you must:
+    * Remove staticcollect=1 from congifvars within Heroku
+    * Ensure DEBUG is set to false in settings.py file or:
+    * Set DEBUG to development with: development = os.environ.get('DEVELOPMENT', False) above it.
 
 
 
