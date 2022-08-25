@@ -282,6 +282,17 @@ Page only available for Site Administrators once accessing https://yes-money.her
 * The logo was created on [VistaCreate](https://create.vista.com/home/)
 
 # Testing
+Due to the size of the testing section, I created TESTING.md. It contains:
+* validator testing, 
+* lighthouse scores, 
+* Django Testing, 
+* User Story Testing, 
+* Manual Tests, 
+* Responsiveness Tests, 
+* Browser Compatibility Tests 
+* encountered errors. 
+
+Please go to [TESTING.md]()
 
 # Deployment
 ## Forking The GitHub Repository
@@ -423,10 +434,11 @@ To make a local clone of the project follow these steps:
         - Manual Deployment: This will only prompt Heroku to build your app when you manually tell it to do so. 
 17. Ensure the correct branch is selected "master/Main", and select the deployment method that you desire.
 18. Before deploying the final draft of your project you must:
-    * Remove staticcollect=1 from congifvars within Heroku
-    * Ensure DEBUG is set to false in settings.py file or:
-    * Set DEBUG to development with: development = os.environ.get('DEVELOPMENT', False) above it.
+    * Remove staticcollect=1 from Config Vars within Heroku
+    * Ensure DEBUG is set to False in settings.py file
 
 
-
-
+# Credits and Acknowledgments 
+* [Crycle Truly]((https://www.youtube.com/c/CryceTruly)) for his amazing Django tutorials that passed me so much knowledge.
+* Huge thank you to my Code Institute amazing fellow students from cohort msletb-nov-2021 and our faciliator Kasia Bogucka.
+* Thank you to my mentor Chris Quinn for his precious suggestions.
