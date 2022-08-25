@@ -6,6 +6,9 @@ from django.utils.timezone import now
 
 
 class Expense(models.Model):
+    """
+    Class that defines the Expenses Model
+    """
     amount = models.FloatField()
     date = models.DateField(default=now)
     description = models.TextField()
@@ -20,11 +23,13 @@ class Expense(models.Model):
 
 
 class Category(models.Model):
+    """
+    Class that defines the Category Model
+    """
     name = models.CharField(max_length=255)
 
     class Meta:
         verbose_name_plural = 'Categories'
-
 
     def __str__(self):
         return self.name

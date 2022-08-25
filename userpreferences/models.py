@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 
 
 class UserPreference(models.Model):
+    """
+    Class that defines the User Currency Preference Model
+    """
     user = models.OneToOneField(to=User, on_delete=models.CASCADE)
     currency = models.CharField(max_length=255, blank=True, null=True)
 

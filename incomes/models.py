@@ -6,7 +6,10 @@ from django.utils.timezone import now
 
 
 class Income(models.Model):
-    amount = models.FloatField()  # DECIMAL
+    """
+    Class that defines the Expenses Model
+    """
+    amount = models.FloatField()
     date = models.DateField(default=now)
     description = models.TextField()
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
@@ -20,6 +23,9 @@ class Income(models.Model):
 
 
 class Source(models.Model):
+    """
+    Class that defines the Category Model
+    """
     name = models.CharField(max_length=255)
 
     def __str__(self):

@@ -9,6 +9,10 @@ from .models import UserPreference
 
 
 def index(request):
+    """
+    Function populates the information within currency preference page,
+    uses on JSON currencies file
+    """
     currency_data = []
     file_path = os.path.join(settings.BASE_DIR, 'currencies.json')
 
@@ -23,7 +27,8 @@ def index(request):
         user_preferences = UserPreference.objects.get(user=request.user)
     if request.method == 'GET':
 
-        return render(request, 'preferences/index.html', {'currencies': currency_data, 'user_preferences': user_preferences})
+        return render(request, 'preferences/index.html', {
+            'currencies': currency_data, 'user_preferences': user_preferences})
     else:
 
         currency = request.POST['currency']
@@ -33,4 +38,5 @@ def index(request):
         else:
             UserPreference.objects.create(user=request.user, currency=currency)
         messages.success(request, 'Changes saved')
-        return render(request, 'preferences/index.html', {'currencies': currency_data, 'user_preferences': user_preferences})
+        return render(request, 'preferences/index.html', {
+            'currencies': currency_data, 'user_preferences': user_preferences})

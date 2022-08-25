@@ -15,12 +15,18 @@ import datetime
 
 
 def search_expenses(request):
+    """
+    Function which allows to search expenses
+    """
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
         expense = Expense.objects.filter(
-            amount__istartswith=search_str, owner=request.user) | Expense.objects.filter(
-            date__istartswith=search_str, owner=request.user) | Expense.objects.filter(
-            description__icontains=search_str, owner=request.user) | Expense.objects.filter(
+            amount__istartswith=search_str, owner=request.user
+            ) | Expense.objects.filter(
+            date__istartswith=search_str, owner=request.user
+            ) | Expense.objects.filter(
+            description__icontains=search_str, owner=request.user
+            ) | Expense.objects.filter(
             category__icontains=search_str, owner=request.user)
         data = expense.values()
         return JsonResponse(list(data), safe=False)
@@ -28,6 +34,9 @@ def search_expenses(request):
 
 @login_required(login_url='/authentication/login')
 def index(request):
+    """
+    Function bringing information to the table
+    """
     categories = Category.objects.all()
     expenses = Expense.objects.filter(owner=request.user)
     paginator = Paginator(expenses, 5)
@@ -47,6 +56,9 @@ def index(request):
 
 @login_required(login_url='/authentication/login')
 def add_expense(request):
+    """
+    Function allowing to add expenses
+    """
     categories = Category.objects.all()
     context = {
         'categories': categories,
@@ -69,7 +81,9 @@ def add_expense(request):
             messages.error(request, 'Description is required')
             return render(request, 'expenses/add_expense.html', context)
 
-        Expense.objects.create(owner=request.user, amount=amount, date=date, category=category, description=description)
+        Expense.objects.create(
+            owner=request.user, amount=amount,
+            date=date, category=category, description=description)
         messages.success(request, 'Expense added successfully')
 
         return redirect('expenses')
@@ -77,6 +91,9 @@ def add_expense(request):
 
 @login_required(login_url='/authentication/login')
 def expense_edit(request, id):
+    """
+    Function allowing to edit expense
+    """
     expense = Expense.objects.get(pk=id)
     categories = Category.objects.all()
     context = {
@@ -113,6 +130,9 @@ def expense_edit(request, id):
 
 
 def delete_expense(request, id):
+    """
+    Function allowing to delte expense
+    """
     expense = Expense.objects.get(pk=id)
     expense.delete()
     messages.success(request, 'Expense deleted successfully')
@@ -120,6 +140,9 @@ def delete_expense(request, id):
 
 
 def delete_confirmation(request, id):
+    """
+    Function for delete confirmation page
+    """
     expense = Expense.objects.get(pk=id)
     context = {'expense': expense}
 
@@ -131,19 +154,29 @@ def delete_confirmation(request, id):
 
 
 def expense_category_summary(request):
+    """
+    Function summarizing expenses over last 6 months for the chart view
+    """
     todays_date = datetime.date.today()
     six_months_ago = todays_date-datetime.timedelta(days=30*6)
-    expenses = Expense.objects.filter(owner=request.user, date__gte=six_months_ago, date__lte=todays_date)
+    expenses = Expense.objects.filter(
+        owner=request.user, date__gte=six_months_ago, date__lte=todays_date)
     finalrep = {
 
     }
 
-    def  get_category(expense):
+    def get_category(expense):
+        """
+        Function for the chart getting categories
+        """
         return expense.category
 
     category_list = list(set(map(get_category, expenses)))
 
     def get_expense_category_amount(category):
+        """
+        Function for the chart getting amounts per categories
+        """
         amount = 0
         filtered_by_category = expenses.filter(category=category)
 
@@ -159,12 +192,17 @@ def expense_category_summary(request):
 
 
 def stats_view(request):
+    """ Function returns the expenses chart page """
     return render(request, 'expenses/stats.html')
 
 
 def export_csv(request):
+    """
+    Function allowing to export CSV files
+    """
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename=Expenses' + str(datetime.datetime.now()) + '.csv'
+    response['Content-Disposition'] = 'attachment; filename=Expenses' + str(
+        datetime.datetime.now()) + '.csv'
 
     writer = csv.writer(response)
     writer.writerow(['Amount', 'Description', 'Category', 'Date'])
@@ -172,6 +210,8 @@ def export_csv(request):
     expenses = Expense.objects.filter(owner=request.user)
 
     for expense in expenses:
-        writer.writerow([expense.amount, expense.description, expense.category, expense.date])
+        writer.writerow([
+            expense.amount, expense.description, expense.category, expense.date
+            ])
 
     return response

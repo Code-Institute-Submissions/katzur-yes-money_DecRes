@@ -289,7 +289,7 @@ Due to the size of the testing section, I created TESTING.md. It contains:
 * User Story Testing, 
 * Manual Tests, 
 * Responsiveness Tests, 
-* Browser Compatibility Tests 
+* Browser Compatibility Tests,
 * encountered errors. 
 
 Please go to [TESTING.md]()
@@ -439,6 +439,6 @@ To make a local clone of the project follow these steps:
 
 
 # Credits and Acknowledgments 
-* [Crycle Truly]((https://www.youtube.com/c/CryceTruly)) for his amazing Django tutorials that passed me so much knowledge.
+* [Crycle Truly](https://www.youtube.com/c/CryceTruly) for his amazing Django tutorials that passed me so much knowledge.
 * Huge thank you to my Code Institute amazing fellow students from cohort msletb-nov-2021 and our faciliator Kasia Bogucka.
 * Thank you to my mentor Chris Quinn for his precious suggestions.

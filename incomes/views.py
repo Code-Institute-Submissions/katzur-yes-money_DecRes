@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -7,7 +7,6 @@ import json
 from django.http import JsonResponse, HttpResponse
 from .models import Source, Income
 import datetime
-from django.shortcuts import get_object_or_404
 import csv
 
 
@@ -15,12 +14,18 @@ import csv
 
 
 def search_income(request):
+    """
+    Function which allows to search incomes
+    """
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
         income = Income.objects.filter(
-            amount__istartswith=search_str, owner=request.user) | Income.objects.filter(
-            date__istartswith=search_str, owner=request.user) | Income.objects.filter(
-            description__icontains=search_str, owner=request.user) | Income.objects.filter(
+            amount__istartswith=search_str, owner=request.user
+            ) | Income.objects.filter(
+            date__istartswith=search_str, owner=request.user
+            ) | Income.objects.filter(
+            description__icontains=search_str, owner=request.user
+            ) | Income.objects.filter(
             source__icontains=search_str, owner=request.user)
         data = income.values()
         return JsonResponse(list(data), safe=False)
@@ -28,6 +33,9 @@ def search_income(request):
 
 @login_required(login_url='/authentication/login')
 def index(request):
+    """
+    Function bringing information to the table
+    """
     categories = Source.objects.all()
     income = Income.objects.filter(owner=request.user)
     paginator = Paginator(income, 5)
@@ -47,6 +55,9 @@ def index(request):
 
 @login_required(login_url='/authentication/login')
 def add_income(request):
+    """
+    Function allowing to add income
+    """
     sources = Source.objects.all()
     context = {
         'sources': sources,
@@ -69,7 +80,9 @@ def add_income(request):
             messages.error(request, 'Description is required')
             return render(request, 'income/add_income.html', context)
 
-        Income.objects.create(owner=request.user, amount=amount, date=date, source=source, description=description)
+        Income.objects.create(
+            owner=request.user, amount=amount,
+            date=date, source=source, description=description)
         messages.success(request, 'Income saved successfully')
 
         return redirect('income')
@@ -77,6 +90,9 @@ def add_income(request):
 
 @login_required(login_url='/authentication/login')
 def income_edit(request, id):
+    """
+    Function allowing to edit income
+    """
     income = Income.objects.get(pk=id)
     sources = Source.objects.all()
     context = {
@@ -111,6 +127,9 @@ def income_edit(request, id):
 
 
 def delete_income(request, id):
+    """
+    Function allowing to delete income
+    """
     income = Income.objects.get(pk=id)
     income.delete()
     messages.success(request, 'Income removed')
@@ -118,6 +137,9 @@ def delete_income(request, id):
 
 
 def delete_confirmation_income(request, id):
+    """
+    Function for delete confirmation page
+    """
     income = Income.objects.get(pk=id)
     context = {'income': income}
 
@@ -129,18 +151,28 @@ def delete_confirmation_income(request, id):
 
 
 def income_source_summary(request):
-    todays_date=datetime.date.today()
-    six_months_ago=todays_date-datetime.timedelta(days=30*6)
-    income = Income.objects.filter(owner=request.user, date__gte=six_months_ago, date__lte=todays_date)
+    """
+    Function summarizing income over last 6 months for the chart view
+    """
+    todays_date = datetime.date.today()
+    six_months_ago = todays_date-datetime.timedelta(days=30*6)
+    income = Income.objects.filter(
+        owner=request.user, date__gte=six_months_ago, date__lte=todays_date)
     finalrep = {
 
     }
 
     def get_source(income):
+        """
+        Function for the chart getting sources
+        """
         return income.source
     source_list = list(set(map(get_source, income)))
 
     def get_income_source_amount(source):
+        """
+        Function for the chart getting amounts per source
+        """
         amount = 0
         filtered_by_source = income.filter(source=source)
 
@@ -156,12 +188,17 @@ def income_source_summary(request):
 
 
 def stats_income_view(request):
+    """ Function returns the expenses chart page """
     return render(request, 'income/stats-income.html')
 
 
 def export_csv_income(request):
+    """
+    Function allowing to export CSV files
+    """
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename=Income' + str(datetime.datetime.now()) + '.csv'
+    response['Content-Disposition'] = 'attachment; filename=Income' + str(
+        datetime.datetime.now()) + '.csv'
 
     writer = csv.writer(response)
     writer.writerow(['Amount', 'Description', 'Source', 'Date'])
@@ -169,6 +206,7 @@ def export_csv_income(request):
     income = Income.objects.filter(owner=request.user)
 
     for income in income:
-        writer.writerow([income.amount, income.description, income.source, income.date])
+        writer.writerow([
+            income.amount, income.description, income.source, income.date])
 
     return response
