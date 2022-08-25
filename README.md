@@ -59,9 +59,9 @@ It was divided into three sections for clear tasks distribution and visual progr
 
 Based on the Iterative Development idea - while working on this project, I added new functional capabilities and modified existing features as needed over time. Different parts of the project were developed at various times and were integrated based on their successful completion. Increments were build based on their functionality need to not spend efforts on building features not neccessary for the project. Subsequent iterations were implemented based on the Users feedback and tests.
 
-MoSCoW prioritization was taken under consideration while creating this project - some of the User Stories were critical (like user authentication, CRUD functionality) compared to other User Stories rather considerable (chart, contact form, CSV exports). Those with smaller impact were left for the later phase of page development, while other - vital ones - were guaranteed to be delivered on time. Timeboxing and prioritization were crutial for this project and can be reflected by viewing Iteration process (Todo > In Progress > Done). 
+MoSCoW prioritization was taken under consideration while creating this project - some of the User Stories were critical (like user authentication, CRUD functionality) compared to other User Stories rather considerable (chart, contact form, CSV exports). Those with smaller impact were left for the later phase of page development, while other - vital ones - were guaranteed to be delivered on time. Timeboxing and prioritization were crutial for this project and can be reflected by viewing Iteration process (Todo > In Progress > Done) and labels assigned to each User Story (Must Have, Should Have, Could Have and Won't Have).
 ### <ins>Target Audience</ins>
-YESMoney page was designed for all the Users, who are interested in tracking their personal budget, without any age limitation. Due to the nature of money - it is expected that adult Users will find it more useful and interesting as a product for a daily life use. By implementing modern design and vector graphics YESMoney is aspiring to be attractive also for younger Users, who wish to save information about their pocket money (this income source available to choose) and various expenses.
+YESMoney page was designed for all the Users, who are interested in tracking their personal budget, without any age limitation. Due to the nature of money - it is expected that adult Users will find it more useful and interesting as a product for a daily life use. By implementing modern design and vector graphics YESMoney is aspiring to be attractive also for younger Users, who wish to save information about their pocket money (this income source is available to choose) and various expenses.
 
 ### <ins>User Stories</ins>
 * From the User Perspective:
@@ -96,4 +96,34 @@ YESMoney page was designed for all the Users, who are interested in tracking the
 * User notifications (messages, confirmation window)
 * Graph (income, expense based on the database information for a specific User)
 
+## Site Structure
+YESMoney was developed usiutalizing Django. As a result the page functionality was split into separate applications. For this project I created 4 apps: authentication, expenses, incomes, userprferences for clear functionality split.
 
+* Authentication - this app contains the pages that both: logged in and not logged in Users - will see: home page, contact page, login page and registration page. Those will be landing pages for the Users, who'll log out of the wallet (home), and those, who want to access the wallet (login). 
+* Expenses - this app contain pages and functionality for Expenses site inside the wallet. Visible only for logged in Users. They allow the Users to see their expenses (main landing page), Add expenses, Edit Expenses, Delete Expenses, View the summary of expenses (chart).
+* Income - this app contain pages and functionality for Income site inside the wallet. Visible only for logged in Users. They allow the Users to see their incomes (main landing page), Add incomes, Edit incomes, Delete incomes, View the summary of incomes (chart).
+* Userpreferences - this app contain page and functionality for the User preferences inside the wallet under the tab "Currency preference". Visible only for logged in Users. Allows the User to choose their preffered currency out of the provided list and autopopulates this information across the other wallet pages.
+
+## Design
+### <ins>Wireframes</ins>
+<details> <summary> Home page</summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661428126/2022-08-25_12_48_23-YESMoney.pdf_-_Adobe_Acrobat_Reader_DC_64-bit_frwa2i.png">
+</details>
+<details> <summary> Contact page</summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661428209/2022-08-25_12_49_51-YESMoney.pdf_-_Adobe_Acrobat_Reader_DC_64-bit_xfpfag.png">
+</details>
+<details> <summary> Login page</summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661428251/2022-08-25_12_50_35-YESMoney.pdf_-_Adobe_Acrobat_Reader_DC_64-bit_zv8z76.png">
+</details>
+<details> <summary> Registration page</summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661428293/2022-08-25_12_51_17-YESMoney.pdf_-_Adobe_Acrobat_Reader_DC_64-bit_f3cvm8.png">
+</details>
+<details> <summary> Main wallet page</summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661428336/2022-08-25_12_51_55-YESMoney.pdf_-_Adobe_Acrobat_Reader_DC_64-bit_xvqa3y.png">
+</details>
+<details> <summary> Chart page</summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661428380/2022-08-25_12_52_38-YESMoney.pdf_-_Adobe_Acrobat_Reader_DC_64-bit_hhkegj.png">
+</details>
+<details> <summary> Currency preference page</summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661428446/2022-08-25_12_53_31-YESMoney.pdf_-_Adobe_Acrobat_Reader_DC_64-bit_w1owx5.png">
+</details>
