@@ -11,13 +11,13 @@
             <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
                 <form method="POST" action="{% url 'delete-confirmation' expense.id %}" class="ui form">
                     {% csrf_token %}
-                    <a href="{% url 'expense-delete' expense.id %}" type="button" class="btn btn-danger btn-lg px-4 me-md-2 fw-bold">Delete</a>
-                    <a href="{% url 'expenses' %}" type="button" class="btn btn-outline-secondary btn-lg px-4">Cancel</a>
+                    <a href="{% url 'expense-delete' expense.id %}" class="btn btn-danger btn-lg px-4 me-md-2 fw-bold">Delete</a>
+                    <a href="{% url 'expenses' %}" class="btn btn-outline-secondary btn-lg px-4">Cancel</a>
                     </form>
             </div>
         </div>
         <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg mb-4">
-            <img class="rounded-lg-3 img-fluid" src="https://res.cloudinary.com/katzur/image/upload/v1661049681/3567801_xo4xbr.jpg" alt="Picture of a broken piggy bank" width="600px" id="deleteconfimg">
+            <img class="rounded-lg-3 img-fluid" src="https://res.cloudinary.com/katzur/image/upload/v1661049681/3567801_xo4xbr.jpg" alt="Picture of a broken piggy bank" width="600" id="deleteconfimg">
         </div>
     </div>
 </div>
