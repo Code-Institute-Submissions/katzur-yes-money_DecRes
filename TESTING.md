@@ -52,9 +52,11 @@
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661459239/2022-08-25_21_27_02-PEP8_online_check_-_Results_sjca2h.png">
 </details>
 
-## [HTML Validation](https://validator.w3.org/)
+### 2. [HTML Validation](https://validator.w3.org/)
 
-![html](docs/readme/w3chtml.png)
+<details> <summary> HTML </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661463898/2022-08-25_22_44_31-Showing_results_for_https___yes-money.herokuapp.com__-_Nu_Html_Checker_dl8qt4.png">
+</details>
 
 ## [CSS Validation](https://jigsaw.w3.org/css-validator/)
 
