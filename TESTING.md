@@ -53,13 +53,25 @@
 </details>
 
 ### 2. [HTML Validation](https://validator.w3.org/)
-
-<details> <summary> HTML </summary>
+<details> <summary> Tested for all the pages. Screenshot from the home page </summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661463898/2022-08-25_22_44_31-Showing_results_for_https___yes-money.herokuapp.com__-_Nu_Html_Checker_dl8qt4.png">
 </details>
 
-## [CSS Validation](https://jigsaw.w3.org/css-validator/)
+### 3. [CSS Validation](https://jigsaw.w3.org/css-validator/)
+<details> <summary> The errors which can be seen on the screenshot below is coming from default Bootstrap url: https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css. Confirmed that it can be ignored, as it wasn't caused by my work on the project. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661467017/2022-08-25_22_48_32-W3C_CSS_Validator_results_for_https___yes-money.herokuapp.com__CSS_level_3_SV_zabemc.png">
+</details>
 
-The errors which can be seen on the screen shot below are coming from Front-Awesome, not my project, so can be ignored.
 
-![CSS](docs/readme/w3ccss.png)
+## Lighthouse Score
+
+### Mobile:
+<details> <summary> Mobile Lighthouse Score </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661467281/2022-08-25_22_02_42-YESMoney_u4ewst.png">
+</details>
+
+### Desktop:
+<details> <summary> Desktop Lighthouse Score </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661467268/2022-08-25_23_40_43-YESMoney_likd16.png">
+</details>
+

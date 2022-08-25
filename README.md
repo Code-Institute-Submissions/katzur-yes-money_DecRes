@@ -292,7 +292,7 @@ Due to the size of the testing section, I created TESTING.md. It contains:
 * Browser Compatibility Tests,
 * encountered errors. 
 
-Please go to [TESTING.md]()
+Please go to [TESTING.md](TESTING.md)
 
 # Deployment
 ## Forking The GitHub Repository
