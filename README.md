@@ -240,5 +240,49 @@ Page only available for Site Administrators once accessing https://yes-money.her
 * Viewing the income on the timeline, where User can select time period (weekly, monthly, yearly expenses/ incomes)
 * Add additional graphs for better income/ expense view (graphs: lines, bars)
 * Add additional output boxes displaying overall spending/ income, this month's spending/ income, and amount of transactions
+* History of User's actions
+
+
+## Technologies Used
+### <ins>Languages and Frameworks</ins>
+* HTML
+* CSS
+* JavaScript
+* Python
+* Django - Python Framework used to create the project.
+* Bootstrap - CSS framework used for designing the project.
+
+### <ins>Other Technologies</ins>
+* DevTools - help fix problem areas and identify the errors.
+* Heroku - project deployment.
+* PostgreSQL (Heroku) - database used through Heroku.
+* Cloudinary - store static files and images.
+* GitHub, Gitpod - storing code and deploying the site, building and editing the code.
+* Notepad++ - help with writing some additional code, experiments and changes.
+* Balsamiq - wireframes creation.
+* Postman Agent - API requests
+* Diagram.net - database diagram schema creation
+* [Sortable](https://github.com/tofsjonas/sortable) - Vanilla JavaScript table sort
+
+### <ins>Content</ins>
+* [E-wallet idea](https://pl.pinterest.com/pin/293859944448506091/) - found on Pinterest in design suggestions
+* Django tutorial series from [Cryce Truly](https://www.youtube.com/c/CryceTruly) - absolutely great content teaching basic Django and JavaScript/ Ajax in context of building financial websites and user authentication functionality
+* Code Institute walkthrough project ['I think therefore I blog'](https://github.com/Code-Institute-Solutions/Django3blog) - great sorece of information how to start Django project and how to move with project configuration
+* Bootstrap Examples. Pages for this project are based on [Dashboard](https://getbootstrap.com/docs/5.2/examples/dashboard/), [Cover](https://getbootstrap.com/docs/5.2/examples/cover/), [Sign-In](https://getbootstrap.com/docs/5.2/examples/sign-in/), as well as Bootstrap documentation.
+* [Chart.js](https://www.chartjs.org/docs/latest/) - provided base for project's charts for incomes and expenses
+* Django Testing from Code Institute ['Hello Django' Walkthrough project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/dc049b343a9b474f8d75822c5fda1582/5666926980b74689b37a0d5da3cec510/)
+* Python Expense Tracker Project from [Data-Flair](https://data-flair.training/blogs/expense-tracker-python/) - explaining step by step how to implement charts, table, history of User's actions
+* Article [Creating a Budget Web App with Django](https://kristian-roopnarine.medium.com/creating-a-budget-web-app-with-django-655369b6d43c) - useful information about the models and functions implementation
+* [Colorib - Bootstrap Hamburger Menu Examples](https://colorlib.com/wp/bootstrap-hamburger-menu/) > Here I used [Menu Toggle Button](https://codepen.io/GeoffreyCrofte/full/nybYBm) for Login and Registration Page, and [Contact Form](https://preview.colorlib.com/theme/bootstrap/contact-form-16/)
+* [Codepen - Sliding Diagonals Background](https://codepen.io/chris22smith/pen/RZogMa) - for interesting background effect for Login and Registration page
+* [Article about User Stories by Anastasiia Kalachova](https://www.altamira.ai/blog/difference-between-epics-vs-user-stories/) - explaining difference between epics and user stories
+* [Freepik](https://www.freepik.com/) - beautiful free vector images from [Storyset](https://www.freepik.com/author/stories)
+* [Tutorial on contact forms](https://www.youtube.com/watch?v=1ihn3iRXtsY&t=902s&ab_channel=djangotutorials) from Djangotutorials
+* Color pallete creator and contrast checker were from on [Coolors](https://coolors.co/)
+* The logo and about us animated image were created on [VistaCreate](https://create.vista.com/home/)
+
+
+
+
 
 
