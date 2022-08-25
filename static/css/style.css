@@ -145,6 +145,39 @@ body {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
 
+/* admin page */
+#branding h1,
+#branding h1 a:link,
+#branding h1 a:visited {
+    color: white!important;
+    font-family: monospace!important;
+}
+
+#user-tools {
+    color: #ffd7a0!important;
+    font-weight: bold!important;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background: #65928a!important
+}
+
+#content-related .module h2 {
+    color: whitesmoke!important;
+}
+
+.model-group {
+    display: none;
+}
+
+div.breadcrumbs {
+background: #4c706a!important;
+margin-bottom: 1em;
+font-family: 'ROBOTO', sans-serif;
+text-transform: uppercase;
+font-weight: bold;
+}
+
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
