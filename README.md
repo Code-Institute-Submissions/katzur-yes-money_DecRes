@@ -18,7 +18,7 @@
     * [Design](<#design>)
 		* [Wireframes](#<wireframes>)
 		* [Database Schema Diagram](<#database-schema-diagram>)
-    * [Design](#design)
+        * [Website Surface](#website-surface)
 3. [Features](<#features>)
 	* [Existing Features](<#existing-features>)
 	* [Future Features](<#future-features>)
@@ -132,10 +132,30 @@ YESMoney was developed usiutalizing Django. As a result the page functionality w
 <details> <summary> View the diagram</summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661430617/2022-08-25_13_29_53-Settings_rbmm3i.png">
 </details>
-Database schema for this project required creating six different relational databases, which need to interact with each other to provide proper functionality.
+
+Database schema for this project required creating 5 different relational databases, which interact with each other to provide proper functionality of the page.
 1. Default Django User database - stores the usernames and passwords of all the registered Users. Allows them to login to the wallet, view their incomes and expenses, create new ones, edit them and delete. No need for creating any models, since come as default.
 2. Expense database with relationship to the Category database and Users database. Has fields for amount, date, description, owner and category. On this database all Expense related actions rely solely - without it the Users wouldn't be able to add any Expenses, then view them, see them on Chart, edit or delete, as all information from this database is crutial for all those wallet operations.
 3. Income database with relationship to the Source database and Users database. Has fields for amount, date, description, owner and source. On this database all Incomes related actions rely solely - without it the Users wouldn't be able to add any Incomes, then view them, see them on Chart, edit or delete, as all information from this database is crutial for all those wallet operations.
 4. Category database - allows the User to choose relevant category for their expenses based on the name field. New Category names are added by Admins within the panel, and then utilized by the Users in CRUD operations in the wallet.
 5. Source database - allows the User to choose relevant source for their incomes based on the name field. New Source names are added by Admins within the panel, and then utilized by the Users in CRUD operations in the wallet.
 6. UserPreference database - Expense and Income databases rely on the information passed from UserPreference fields about chosen currency for specific, logged in User. Data from this database populates the fileds within the tables in Income and Expense pages and definies specific, chosen from the JSON list, currency.
+
+### Website Surface
+### <ins>Colors</ins>
+The colors used throughout the page for its main styling are shown below. They are complimented by more colorful images on the specific pages (home, contact, delete confirmation, currency preference), buttons, messages,and background on the login/ register page. The aim was to provide the website consistent, clean look. Colors and layout of the elements were intentionally picked to keep the modern, simple design. Colors compliment each other well and keep great page contrast, which makes it more user-friendly and readable.
+
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661432220/2022-08-25_13_56_37-Create_a_Palette_-_Coolors_mx0sww.png" width="700">
+
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661432391/2022-08-25_13_59_35-Color_Contrast_Checker_-_Coolors_poqsyw.png" width="700">
+
+### <ins>Typography</ins>
+I decided to stay mostly with default fonts that came with Bootstrap CSS styling. Two fonts I especially liked to continuously use within this project to provide satisfiying design:
+
+* Monospace - well known, easy to read, fits the page overal style. Used for the page name and login/ registration pages.
+* Segoe UI - sans-serif font - clean and easy to read.
+
+### <ins>Icons and images</ins>
+All icons used for YESMoney come from [IconScout](https://iconscout.com/)
+All images used for YESMoney come from [Freepik](https://www.freepik.com/)
+
