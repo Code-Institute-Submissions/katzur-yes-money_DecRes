@@ -127,3 +127,15 @@ YESMoney was developed usiutalizing Django. As a result the page functionality w
 <details> <summary> Currency preference page</summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661428446/2022-08-25_12_53_31-YESMoney.pdf_-_Adobe_Acrobat_Reader_DC_64-bit_w1owx5.png">
 </details>
+
+## Database Schema Diagram
+<details> <summary> View the diagram</summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661430617/2022-08-25_13_29_53-Settings_rbmm3i.png">
+</details>
+Database schema for this project required creating six different relational databases, which need to interact with each other to provide proper functionality.
+1. Default Django User database - stores the usernames and passwords of all the registered Users. Allows them to login to the wallet, view their incomes and expenses, create new ones, edit them and delete. No need for creating any models, since come as default.
+2. Expense database with relationship to the Category database and Users database. Has fields for amount, date, description, owner and category. On this database all Expense related actions rely solely - without it the Users wouldn't be able to add any Expenses, then view them, see them on Chart, edit or delete, as all information from this database is crutial for all those wallet operations.
+3. Income database with relationship to the Source database and Users database. Has fields for amount, date, description, owner and source. On this database all Incomes related actions rely solely - without it the Users wouldn't be able to add any Incomes, then view them, see them on Chart, edit or delete, as all information from this database is crutial for all those wallet operations.
+4. Category database - allows the User to choose relevant category for their expenses based on the name field. New Category names are added by Admins within the panel, and then utilized by the Users in CRUD operations in the wallet.
+5. Source database - allows the User to choose relevant source for their incomes based on the name field. New Source names are added by Admins within the panel, and then utilized by the Users in CRUD operations in the wallet.
+6. UserPreference database - Expense and Income databases rely on the information passed from UserPreference fields about chosen currency for specific, logged in User. Data from this database populates the fileds within the tables in Income and Expense pages and definies specific, chosen from the JSON list, currency.
