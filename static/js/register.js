@@ -5,9 +5,12 @@ const EmailFeedbackArea = document.querySelector(".EmailFeedbackArea");
 const passwordField = document.querySelector("#passwordField");
 const usernameSuccessOutput = document.querySelector(".usernameSuccessOutput");
 const checkbox = document.querySelector("#showPasswordToggle");
-const submitButton = document.querySelector(".submit-btn")
+const submitButton = document.querySelector(".submit-btn");
 
 
+/**
+ * Allows to hide/ show the password
+ */
 checkbox.addEventListener("click", (e) => {
     if (e.target.checked) {
         checkboxDescription.textContent = "Show the password";
@@ -18,7 +21,9 @@ checkbox.addEventListener("click", (e) => {
     }
 });
 
-
+/**
+ * Email validation
+ */
 emailField.addEventListener("keyup", (e) => {
     const emailVal = e.target.value;
 
@@ -47,7 +52,9 @@ emailField.addEventListener("keyup", (e) => {
     }
 });
 
-
+/**
+ * Username validation
+ */
 usernameField.addEventListener("keyup", (e) => {
     const usernameVal = e.target.value;
 

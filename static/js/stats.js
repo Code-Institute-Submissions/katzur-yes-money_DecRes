@@ -1,3 +1,7 @@
+/**
+ * Chart functionality for expenses stats
+ */
+
 const renderChart = (data, labels) => {
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
@@ -33,14 +37,14 @@ const renderChart = (data, labels) => {
             }
         }
     });
-}
+};
 
 const getChartData = () => {
 
     fetch('/expense_category_summary').then((res) => res.json()).then((results) => {
         console.log('results', results);
         const category_data = results.expense_category_data;
-        const [labels, data] = [Object.keys(category_data), Object.values(category_data),]
+        const [labels, data] = [Object.keys(category_data), Object.values(category_data),];
 
         renderChart(data, labels);
     });

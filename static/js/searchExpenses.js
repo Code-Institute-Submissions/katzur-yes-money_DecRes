@@ -6,7 +6,9 @@ tableOutput.style.display = "none";
 const noResults = document.querySelector(".no-results");
 const tbody = document.querySelector(".table-body");
 
-
+/**
+ * Allows to search for expenses in the search bar
+ */
 searchField.addEventListener("keyup", (e) => {
     const searchValue = e.target.value;
 

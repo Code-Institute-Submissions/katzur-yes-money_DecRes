@@ -283,14 +283,13 @@ Page only available for Site Administrators once accessing https://yes-money.her
 
 # Testing
 Due to the size of the testing section, I created TESTING.md. It contains:
-* validator testing, 
-* lighthouse scores, 
-* Django Testing, 
+* Validators testing, 
+* Lighthouse scores, 
 * User Story Testing, 
 * Manual Tests, 
+* Error tracing and fixing,
 * Responsiveness Tests, 
-* Browser Compatibility Tests,
-* encountered errors. 
+* Issues and bugs.
 
 Please go to [TESTING.md](TESTING.md)
 
