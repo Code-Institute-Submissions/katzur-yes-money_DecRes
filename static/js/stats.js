@@ -1,5 +1,5 @@
 /**
- * Chart functionality for expenses stats
+ * Chart functionality for expenses stats from Chart.js
  */
 
 const renderChart = (data, labels) => {

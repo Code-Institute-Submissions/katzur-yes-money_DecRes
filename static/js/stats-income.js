@@ -1,5 +1,5 @@
 /**
- * Chart functionality for Income stats
+ * Chart functionality for Income stats from Chart.js
  */
 
 const renderChart = (data, labels) => {

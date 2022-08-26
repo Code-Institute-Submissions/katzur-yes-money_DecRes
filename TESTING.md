@@ -153,7 +153,7 @@ Another part of my testing process was focusing on testing User Stories and iden
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661440239/2022-08-25_16_10_25-YESMoney_vqgg3l.png">
 </details>
 
-<details> <summary> https://res.cloudinary.com/katzur/image/upload/v1661439390/2022-08-25_15_56_13-YESMoney_w97rcn.png </summary>
+<details> <summary> As a Site User I can view a paginated list of expenses and incomes so that I can easily view and edit them on the page. </summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661548329/search_e01uxa.jpg">
 </details>
 

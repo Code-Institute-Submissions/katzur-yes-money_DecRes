@@ -1,4 +1,5 @@
 {% if messages %}
+<!-- This code is based on Code Institute walkthrough I think therefore I blog -->
 <div class="messages"> 
     {% for message in messages %}
     <div {% if message.tags %} class="alert alert-sm alert-{{ message.tags }}" id="msg" role="alert" {% endif %}>

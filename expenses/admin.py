@@ -4,8 +4,10 @@ from .models import Expense, Category
 
 # Register your models here.
 
-
 class ExpenseAdmin(admin.ModelAdmin):
+    """
+    Class that defines the Expenses and Categories in Admin Panel
+    """
     list_display = ('amount', 'description', 'owner', 'category', 'date',)
     search_fields = ('description', 'category', 'date',)
 
