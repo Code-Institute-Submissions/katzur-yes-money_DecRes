@@ -112,7 +112,7 @@ No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esve
 ## Manual Testing
 
 ### <ins>Authentication pages work the same way for logged in and not logged in Users</ins>
-| Status | **Authentication pages - Home**
+|  | **Authentication pages - Home**
 |:-------:|:--------|
 | &check; | Navbar contains links to Home, Contact, Login pages
 | &check; | Pressing Home brings the User to the Homepage
@@ -120,7 +120,7 @@ No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esve
 | &check; | Pressing Login brings the User to the Login Page
 | &check; | Homepage displays a button Register - after clicking it brings the User to Registration Page
 
-| Status | **Authentication pages - Contact**
+|  | **Authentication pages - Contact**
 |:-------:|:--------|
 | &check; | Navbar contains links to Home, Login, Register pages
 | &check; | Pressing Home brings the User to the Homepage
@@ -135,7 +135,7 @@ No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esve
 | &check; | Contact page contains social media icons and allows to click them 
 | &check; | After clicking on the social media button - the User is brought to the relevant social media page in the new window
 
-| Status | **Authentication pages - Login**
+|  | **Authentication pages - Login**
 |:-------:|:--------|
 | &check; | Navbar on the Login page is collapsable and in form of hamburger on the center top of the page - User can click to open it and close
 | &check; | Navbar contains links to Home, Contact, Login, Register pages
@@ -153,7 +153,7 @@ No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esve
 | &check; | If entered credentials are correct and button is clicked - User gets redirected to main wallet page, where greetings message gets displayed
 
 
-| Status | **Authentication pages - Register**
+|  | **Authentication pages - Register**
 |:-------:|:--------|
 | &check; | Navbar on the Register page is collapsable and in form of hamburger on the center top of the page - User can click to open it and close
 | &check; | Navbar contains links to Home, Contact, Login, Register pages
@@ -169,7 +169,228 @@ No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esve
 | &check; | If any of the fields are entered incorrectly or missed - error messages are showing, asking to fill them before sending
 | &check; | If entered credentials are correct and button is clicked - message is displayed, informing the User that action was successful and they're allowed to log in
 
+### <ins>Wallet pages work ONLY for logged in Users.</ins>
+* It's not accessible for Users who are not logged into their account. 
+* Logged in Users can see ONLY their own wallet. 
+* There is no way for the Users to view other Users incomes/ expenses. 
+* Admin has an option to view all the Users, their credentials, expenses and incomes within Admin Panel, that is accessible only by following the url: https://yes-money.herokuapp.com/admin
 
+|  | **Wallet pages - Main Expenses Page**
+|:-------:|:--------|
+| &check; | Page displays greeting and logged in Username in the top Navbar section
+| &check; | Sidebar contains Logo button, list of links with wallet options, sign out button
+| &check; | Pressing Logo button brings the User to the wallet homepage
+| &check; | Pressing Sign Out button brings the User to the authentication homepage and displays a message there informing about the taken action
+| &check; | Pressing Expenses in the sidebar brings the User to the main Expenses page
+| &check; | Pressing Income in the sidebar brings the User to the main Income page
+| &check; | Pressing Expenses Chart in the sidebar brings the User to the Expenses visual statistics page
+| &check; | Pressing Income Chart in the sidebar brings the User to the Income visual statistics page
+| &check; | Right pane contains navigation links, button for exporting CSV file, button for adding expense, search bar, table with expenses, within table: edit button, delete button, table pagination
+| &check; | Pressing navigation informs the user on which site they're at the moment and let's them click the link to redirect to the same page
+| &check; | Pressing Export CSV allows the User to generate a CSV file and download it automatically into their device with list of all table entries
+| &check; | Pressing Add Expense button brings the User to the Add Expense page
+| &check; | Search bar allows the User to type in any value to search for expense in the table based on amount, category, description or date
+| &check; | Pressing Edit button brings the User to the Edit Expense page
+| &check; | Pressing Delete button brings the User to the Delete Confirmation page
+| &check; | Information above pagination buttons contain information how many pages has the table
+| &check; | Pressing Pagination button allows the User to navigate between the table pages, where each contains 5 entries.
+
+
+|  | **Wallet pages - Expenses Table**
+|:-------:|:--------|
+| &check; | Table displays columns with following headers: amount + type of amount populated from currency preference page, category, description, date
+| &check; | Table additionally contains Edit and Delete buttons next to each entry.
+| &check; | Pressing Edit button brings the User to the Edit Expense page
+| &check; | Pressing Delete button brings the User to the Delete Confirmation page
+| &check; | Pressing on Category and Description column headers allows the User to sort the entries alphabetically ascending, descending 
+| &check; | Pressing on Amount column header allows the User to sort the entries from smallest to the biggest amount and vice versa
+| &check; | Pressing on Date column header allows the User to sort the entries by date from newest to oldest and vice versa
+
+
+|  | **Wallet pages - Income Table**
+|:-------:|:--------|
+| &check; | Table displays columns with following headers: amount + type of amount populated from currency preference page, source, description, date
+| &check; | Table additionally contains Edit and Delete buttons next to each entry.
+| &check; | Pressing Edit button brings the User to the Edit Income page
+| &check; | Pressing Delete button brings the User to the Delete Confirmation page
+| &check; | Pressing on Source and Description column headers allows the User to sort the entries alphabetically ascending, descending 
+| &check; | Pressing on Amount column header allows the User to sort the entries from smallest to the biggest amount and vice versa
+| &check; | Pressing on Date column header allows the User to sort the entries by date from newest to oldest and vice versa
+
+
+|  | **Wallet pages - Main Income Page**
+|:-------:|:--------|
+| &check; | Page displays greeting and logged in Username in the top Navbar section
+| &check; | Sidebar contains Logo button, list of links with wallet options, sign out button
+| &check; | Pressing Logo button brings the User to the wallet homepage
+| &check; | Pressing Sign Out button brings the User to the authentication homepage and displays a message there informing about the taken action
+| &check; | Pressing Expenses in the sidebar brings the User to the main Expenses page
+| &check; | Pressing Income in the sidebar brings the User to the main Income page
+| &check; | Pressing Expenses Chart in the sidebar brings the User to the Expenses visual statistics page
+| &check; | Pressing Income Chart in the sidebar brings the User to the Income visual statistics page
+| &check; | Right pane contains navigation links, button for exporting CSV file, button for adding income, search bar, table with incomes, within table: edit button, delete button, table pagination
+| &check; | Pressing navigation informs the user on which site they're at the moment and let's them click the link to redirect to the same page
+| &check; | Pressing Export CSV allows the User to generate a CSV file and download it automatically into their device with list of all table entries
+| &check; | Pressing Add Income button brings the User to the Add Income page
+| &check; | Search bar allows the User to type in any value to search for incomes in the table based on amount, category, description or date
+| &check; | Pressing Edit button brings the User to the Edit Income page
+| &check; | Pressing Delete button brings the User to the Delete Confirmation page
+| &check; | Information above pagination buttons contain information how many pages has the table
+| &check; | Pressing Pagination button allows the User to navigate between the table pages, where each contains 5 entries.
+
+|  | **Wallet pages - Expenses Chart Page**
+|:-------:|:--------|
+| &check; | Page displays greeting and logged in Username in the top Navbar section
+| &check; | Sidebar contains Logo button, list of links with wallet options, sign out button
+| &check; | Pressing Logo button brings the User to the wallet homepage
+| &check; | Pressing Sign Out button brings the User to the authentication homepage and displays a message there informing about the taken action
+| &check; | Pressing Expenses in the sidebar brings the User to the main Expenses page
+| &check; | Pressing Income in the sidebar brings the User to the main Income page
+| &check; | Pressing Expenses Chart in the sidebar brings the User to the Expenses visual statistics page
+| &check; | Pressing Income Chart in the sidebar brings the User to the Income visual statistics page
+| &check; | Right pane contains navigation links, BACK button, chart
+| &check; | Pressing BACK brings the User to the main Income page
+| &check; | Pressing navigation informs the user on which site they're at the moment and let's them click the link to redirect to the same page
+| &check; | Expenses chart is a type of dougnut
+| &check; | Expenses chart has different color for each category
+| &check; | Expenses chart displays a legend on the top with colors assigned to each category
+| &check; | Expenses categories legend elements are clickable and allow the User to display/ not dispay chosen categories
+| &check; | By default all categories from the expenses table are displayed on the chart
+| &check; | By hoovering over certain color on the chart, the total amount for this category displays
+| &check; | Chart contains information for the last 6 months of expenses
+
+|  | **Wallet pages - Income Chart Page**
+|:-------:|:--------|
+| &check; | Page displays greeting and logged in Username in the top Navbar section
+| &check; | Sidebar contains Logo button, list of links with wallet options, sign out button
+| &check; | Pressing Logo button brings the User to the wallet homepage
+| &check; | Pressing Sign Out button brings the User to the authentication homepage and displays a message there informing about the taken action
+| &check; | Pressing Expenses in the sidebar brings the User to the main Expenses page
+| &check; | Pressing Income in the sidebar brings the User to the main Income page
+| &check; | Pressing Expenses Chart in the sidebar brings the User to the Expenses visual statistics page
+| &check; | Pressing Income Chart in the sidebar brings the User to the Income visual statistics page
+| &check; | Right pane contains navigation links, BACK button, chart
+| &check; | Pressing navigation informs the user on which site they're at the moment and let's them click the link to redirect to the same page
+| &check; | Pressing BACK brings the User to the main Income page
+| &check; | Income chart is a type of dougnut
+| &check; | Income chart has different color for each source
+| &check; | Income chart displays a legend on the top with colors assigned to each source
+| &check; | Income source legend elements are clickable and allow the User to display/ not dispay chosen income sources
+| &check; | By default all sources from the income table are displayed on the chart
+| &check; | By hoovering over certain color on the chart, the total amount for this source displays
+| &check; | Chart contains information for the last 6 months of income
+
+|  | **Wallet pages - Currency Preference**
+|:-------:|:--------|
+| &check; | Page displays greeting and logged in Username in the top Navbar section
+| &check; | Sidebar contains Logo button, list of links with wallet options, sign out button
+| &check; | Pressing Logo button brings the User to the wallet homepage
+| &check; | Pressing Sign Out button brings the User to the authentication homepage and displays a message there informing about the taken action
+| &check; | Pressing Expenses in the sidebar brings the User to the main Expenses page
+| &check; | Pressing Income in the sidebar brings the User to the main Income page
+| &check; | Pressing Expenses Chart in the sidebar brings the User to the Expenses visual statistics page
+| &check; | Pressing Income Chart in the sidebar brings the User to the Income visual statistics page
+| &check; | Right pane contains main table with dropdown menu and save button
+| &check; | Pressing dropdown menu displays all available currencies
+| &check; | Clicking Save button saves the Users preference and autopopulates within the table
+
+|  | **Wallet pages - Add Expense Page**
+|:-------:|:--------|
+| &check; | Page displays greeting and logged in Username in the top Navbar section
+| &check; | Sidebar contains Logo button, list of links with wallet options, sign out button
+| &check; | Pressing Logo button brings the User to the wallet homepage
+| &check; | Pressing Sign Out button brings the User to the authentication homepage and displays a message there informing about the taken action
+| &check; | Pressing Expenses in the sidebar brings the User to the main Expenses page
+| &check; | Pressing Income in the sidebar brings the User to the main Income page
+| &check; | Pressing Expenses Chart in the sidebar brings the User to the Expenses visual statistics page
+| &check; | Pressing Income Chart in the sidebar brings the User to the Income visual statistics page
+| &check; | Right pane contains a form, which allows the User to add expense details
+| &check; | Form has fields for: amount, description, category, date - all are required and if missed any, and pressed Submit - error messages are showing, asking to fill them
+| &check; | Amount field requires a numeric value to be entered in order to process with adding the expense
+| &check; | Description field requires a text value to be entered in order to process with adding the expense
+| &check; | Category field contains a dropdown menu, allowing the User to choose one of the available values to be selected in order to process with adding the expense
+| &check; | Date field opens a calendar and allows the User to choose the date of the expense to be selected in order to process with adding the expense
+| &check; | Pressing Submit button when not all the fields are populated - displays an error for specific empty field
+| &check; | Pressing Submit button when all the fields are populated - allows to save the entry in the database and displays it within the table on the main expenses page
+| &check; | After successful adding of new expense - a message is displayed to the User informing about successful action of adding new expense
+
+|  | **Wallet pages - Add Income Page**
+|:-------:|:--------|
+| &check; | Page displays greeting and logged in Username in the top Navbar section
+| &check; | Sidebar contains Logo button, list of links with wallet options, sign out button
+| &check; | Pressing Logo button brings the User to the wallet homepage
+| &check; | Pressing Sign Out button brings the User to the authentication homepage and displays a message there informing about the taken action
+| &check; | Pressing Expenses in the sidebar brings the User to the main Expenses page
+| &check; | Pressing Income in the sidebar brings the User to the main Income page
+| &check; | Pressing Expenses Chart in the sidebar brings the User to the Expenses visual statistics page
+| &check; | Pressing Income Chart in the sidebar brings the User to the Income visual statistics page
+| &check; | Right pane contains a form, which allows the User to add income details
+| &check; | Form has fields for: amount, description, source, date - all are required and if missed any, and pressed Submit - error messages are showing, asking to fill them
+| &check; | Amount field requires a numeric value to be entered in order to process with adding the income
+| &check; | Description field requires a text value to be entered in order to process with adding the income
+| &check; | Source field contains a dropdown menu, allowing the User to choose one of the available values to be selected in order to process with adding the income
+| &check; | Date field opens a calendar and allows the User to choose the date of the income to be selected in order to process with adding the income
+| &check; | Pressing Submit button when not all the fields are populated - displays an error for specific empty field
+| &check; | Pressing Submit button when all the fields are populated - allows to save the entry in the database and displays it within the table on the main income page
+| &check; | After successful adding of new income - a message is displayed to the User informing about successful action of adding new income
+
+|  | **Wallet pages - Edit Expense Page**
+|:-------:|:--------|
+| &check; | Page displays greeting and logged in Username in the top Navbar section
+| &check; | Sidebar contains Logo button, list of links with wallet options, sign out button
+| &check; | Pressing Logo button brings the User to the wallet homepage
+| &check; | Pressing Sign Out button brings the User to the authentication homepage and displays a message there informing about the taken action
+| &check; | Pressing Expenses in the sidebar brings the User to the main Expenses page
+| &check; | Pressing Income in the sidebar brings the User to the main Income page
+| &check; | Pressing Expenses Chart in the sidebar brings the User to the Expenses visual statistics page
+| &check; | Pressing Income Chart in the sidebar brings the User to the Income visual statistics page
+| &check; | Right pane contains a form, which allows the User to edit expense details
+| &check; | Form has fields for: amount, description, category, date, as well as save button and delete button
+| &check; | Pressing Delete button brings the User to the Delete Confirmation page
+| &check; | Form fields are autopopulated based on the previous entry and allow the User to correct the information
+| &check; | Once clicked Save - it saves the entry in the database and displays corrected values within the table on the main expenses page
+| &check; | Amount field requires a numeric value to be entered in order to process with adding the expense
+| &check; | Description field requires a text value to be entered in order to process with adding the expense
+| &check; | Date field opens a calendar and allows the User to choose the date of the expense to be selected in order to process with adding the expense
+| &check; | Category field contains a dropdown menu, allowing the User to choose one of the available values to be selected in order to process with adding the expense
+| &check; | After successful editing of existing expense - a message is displayed to the User informing about successful action on the main expenses page
+
+|  | **Wallet pages - Edit Income Page**
+|:-------:|:--------|
+| &check; | Page displays greeting and logged in Username in the top Navbar section
+| &check; | Sidebar contains Logo button, list of links with wallet options, sign out button
+| &check; | Pressing Logo button brings the User to the wallet homepage
+| &check; | Pressing Sign Out button brings the User to the authentication homepage and displays a message there informing about the taken action
+| &check; | Pressing Expenses in the sidebar brings the User to the main Expenses page
+| &check; | Pressing Income in the sidebar brings the User to the main Income page
+| &check; | Pressing Expenses Chart in the sidebar brings the User to the Expenses visual statistics page
+| &check; | Pressing Income Chart in the sidebar brings the User to the Income visual statistics page
+| &check; | Right pane contains a form, which allows the User to edit income details
+| &check; | Form has fields for: amount, description, source, date, as well as save button and delete button
+| &check; | Pressing Delete button brings the User to the Delete Confirmation page
+| &check; | Form fields are autopopulated based on the previous entry and allow the User to correct the information
+| &check; | Once clicked Save - it saves the entry in the database and displays corrected values within the table on the main income page
+| &check; | Amount field requires a numeric value to be entered in order to process with adding the income
+| &check; | Description field requires a text value to be entered in order to process with adding the income
+| &check; | Date field opens a calendar and allows the User to choose the date of the income to be selected in order to process with adding the income
+| &check; | Source field contains a dropdown menu, allowing the User to choose one of the available values to be selected in order to process with adding the income
+| &check; | After successful editing of existing income - a message is displayed to the User informing about successful action on the main income page
+
+
+|  | **Wallet pages - Delete COnfirmation Page**
+|:-------:|:--------|
+| &check; | Page displays greeting and logged in Username in the top Navbar section
+| &check; | Sidebar contains Logo button, list of links with wallet options, sign out button
+| &check; | Pressing Logo button brings the User to the wallet homepage
+| &check; | Pressing Sign Out button brings the User to the authentication homepage and displays a message there informing about the taken action
+| &check; | Pressing Expenses in the sidebar brings the User to the main Expenses page
+| &check; | Pressing Income in the sidebar brings the User to the main Income page
+| &check; | Pressing Expenses Chart in the sidebar brings the User to the Expenses visual statistics page
+| &check; | Pressing Income Chart in the sidebar brings the User to the Income visual statistics page
+| &check; | Right pane contains form with two buttons: Delete and Cancel
+| &check; | Pressing on Delete button allows the User to permanently delete the entry from the database
+| &check; | Once entry is deleted - User is brought back to the main page and message displays with information about successful deletion
+| &check; | Pressing on Cancel brings back the User to the main Expense or Income page
 
 
 ## Error tracing and fixing
@@ -240,12 +461,12 @@ For this test I chose three different values: default for my desktop browser 144
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661539569/currency_kk2rq9.jpg">
 </details>
 
-<details> <summary> Delete COnfirmation Page</summary>
+<details> <summary> Delete Confirmation Page</summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661539569/delete_gpsaz2.jpg">
 </details>
 
 ## Issues and bugs
 1. Get Modal working with Delete button - I was able to create a modal for delete button, but it coudn't attach the delete option inside the modal to the expense/ income ID, hence needed to create a confirmation page in order to give the User a prompt asking for action verification.
-2. Loading Bootstrap CSS and JavaScript - the example I was using had a source code urls displayed locally as <link href="../../dist/css/bootstrap.min.css"> instead of <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css"> which caused issues with recognizing the code. In effect - I couldn't get any styling until I edited them to https:// urls.
+2. Loading Bootstrap CSS and JavaScript - the example I was using had a source code urls displayed locally as link href="../../dist/css/bootstrap.min.css" instead of link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" which caused issues with recognizing the code. In effect - I couldn't get any styling until I edited them to https:// urls.
 3. Displaying FontAwesome icons within the HTML code.
 4. Search bar bug - when the User tries to search for an entry in the table, Search bar tends to double the output values (duplicates the entry). Once User presses backspace at least once - it comes back to normal, expected search result.

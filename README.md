@@ -287,7 +287,7 @@ Due to the size of the testing section, I created TESTING.md. It contains:
 * Lighthouse scores, 
 * User Story Testing, 
 * Manual Tests, 
-* Error tracing and fixing,
+* Error tracing and fixing in development process,
 * Responsiveness Tests, 
 * Issues and bugs.
 
