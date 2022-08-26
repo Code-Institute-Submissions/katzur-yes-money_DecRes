@@ -105,7 +105,72 @@ No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esve
 </details>
 
 ## User Story Testing
+
+
+
+
 ## Manual Testing
+
+### <ins>Authentication pages work the same way for logged in and not logged in Users</ins>
+| Status | **Authentication pages - Home**
+|:-------:|:--------|
+| &check; | Navbar contains links to Home, Contact, Login pages
+| &check; | Pressing Home brings the User to the Homepage
+| &check; | Pressing Contact brings the User to the Contact Form Page
+| &check; | Pressing Login brings the User to the Login Page
+| &check; | Homepage displays a button Register - after clicking it brings the User to Registration Page
+
+| Status | **Authentication pages - Contact**
+|:-------:|:--------|
+| &check; | Navbar contains links to Home, Login, Register pages
+| &check; | Pressing Home brings the User to the Homepage
+| &check; | Pressing Login brings the User to the Login Page
+| &check; | Pressing Register brings the User to the Registration Page
+| &check; | Page contains contact form: each field (Name, Email, Message) is required and if missed any, and pressed Submit - error messages are showing, asking to fill them before sending
+| &check; | Name field requires a text value to be entered in order to process with sending form
+| &check; | Email field requires a email value to be entered in order to process with sending form
+| &check; | Message field requires a text value to be entered in order to process with sending form
+| &check; | Button to send form is only active once all fields are populated
+| &check; | After pressing send button - User is brought back to Homepage and message pops on the top of the page informing about successful form submission
+| &check; | Contact page contains social media icons and allows to click them 
+| &check; | After clicking on the social media button - the User is brought to the relevant social media page in the new window
+
+| Status | **Authentication pages - Login**
+|:-------:|:--------|
+| &check; | Navbar on the Login page is collapsable and in form of hamburger on the center top of the page - User can click to open it and close
+| &check; | Navbar contains links to Home, Contact, Login, Register pages
+| &check; | Pressing Home brings the User to the Homepage
+| &check; | Pressing Contact brings the User to the Contact Form Page
+| &check; | Pressing Login keeps the User on the Login Page
+| &check; | Pressing Register brings the User to the Registration Page
+| &check; | Page contains login form: each field (Username, Password) is required and if missed any, and pressed Login - error messages are showing, asking to fill them before redirecting to main wallet page
+| &check; | Username field requires a text value to be entered in order to process with login
+| &check; | Password field requires a text value to be entered in order to process with login
+| &check; | Show Password button allows the User to show/ hide the password to ensure that it was entered correctly
+| &check; | If any of the fields are entered incorrectly or missed - error messages are showing, asking to fill them before sending
+| &check; | If entered credentials are incorrect or don't exist in the database - error message is displayed informing the User about it
+| &check; | Register button is present on the page and once clicked - redirects the User to the Registration page
+| &check; | If entered credentials are correct and button is clicked - User gets redirected to main wallet page, where greetings message gets displayed
+
+
+| Status | **Authentication pages - Register**
+|:-------:|:--------|
+| &check; | Navbar on the Register page is collapsable and in form of hamburger on the center top of the page - User can click to open it and close
+| &check; | Navbar contains links to Home, Contact, Login, Register pages
+| &check; | Pressing Home brings the User to the Homepage
+| &check; | Pressing Contact brings the User to the Contact Form Page
+| &check; | Pressing Login brings the User to the Login Page
+| &check; | Pressing Register keeps the User on the Registration Page
+| &check; | Page contains registration form: each field (Username, Email, Password) is required and if missed any, and pressed Register - error messages are showing, asking to fill them before registering the User in the database
+| &check; | Username field requires a text value to be entered in order to process with registration
+| &check; | Email field requires a email value to be entered in order to process with registration
+| &check; | Password field requires a text value to be entered in order to process with registration
+| &check; | Show Password button allows the User to show/ hide the password to ensure that it was entered correctly
+| &check; | If any of the fields are entered incorrectly or missed - error messages are showing, asking to fill them before sending
+| &check; | If entered credentials are correct and button is clicked - message is displayed, informing the User that action was successful and they're allowed to log in
+
+
+
 
 ## Error tracing and fixing
 <details> <summary> Username testing. For that purpose I used the Postman to test the username validation request </summary>
@@ -150,6 +215,7 @@ No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esve
 </details>
 
 ## Responsiveness Test
+For this test I chose three different values: default for my desktop browser 1447px, tablet - 768px, mobile - 480px
 <details> <summary> Home Page</summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661539569/index_g9yyd1.jpg">
 </details>
