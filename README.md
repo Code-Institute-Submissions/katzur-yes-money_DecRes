@@ -77,15 +77,12 @@ YESMoney page was designed for all the Users, who are interested in tracking the
 10. As a Site User I can view visual representation of my expenses (graph) so that I can have a better and easier look at my expenses details over certain period of time.
 11. As a Site User I can view visual representation of my incomes (graph) so that I can have a better and easier look at my income details over certain period of time.
 12. As a Site User I can provide feedback so that the Site Admin knows what needs to be changed in the app, and what additional categories they can add for expenses and incomes.
-13. As a Site User I export my expenses to CSV file so that I can print it out or view in Excel or other application.
-14. As a Site User I can reset my password so that I can easily regain access to my wallet in case I forget my password.
-15. As a Site User I can view the income timeline: this week/ this month/ this year so that I can view better my income over certain period of time.
-16. As a Site User I can view the expenses timeline: this week/ this month/ this year so that I can view better my expenses over certain period of time.
+13. As a Site User I export my expenses and incomes to CSV file so that I can print it out or view in Excel or other application.
 
 * From the Admin perspective:
 1. As a Site Admin I can customize the Admin Panel so that I add different categories and features based on user's needs and feedback.
 2. As a Site Admin I can create expense categories so that the Site Users can see better what type of expenses are generated over time.
-3. As a Site Admin I can create income categories so that the Site Users can see better what type of expenses are generated over time.
+3. As a Site Admin I can create income sources so that the Site Users can see better what type of incomes are generated over time.
 
 ### <ins>Epics (Ideas)</ins>
 * Sign-in, sign-up, logout

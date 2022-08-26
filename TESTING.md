@@ -105,8 +105,76 @@ No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esve
 </details>
 
 ## User Story Testing
+Another part of my testing process was focusing on testing User Stories and identifying their successful implementation within the project.
+<details> <summary> As a Site User I can show/ hide my password once login in/ registering the account, so that I can see if it's typed in correctly/ hide it for the safety reasons. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661547938/password_cqsvrw.jpg">
+</details>
 
+<details> <summary> As a Site User I can logout from the page so that no one can view my wallet details. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661548046/logout_ysyzcf.jpg">
+</details>
 
+<details> <summary> As a Site User I can add preference to my wallet (like currency choice) so that I can personalize the settings more. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661439968/2022-08-25_16_05_53-YESMoney_zp0nl1.png">
+</details>
+
+<details> <summary> As a Site User I can sign up with original username and login to an account so that I can create and manage my wallet. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661439301/2022-08-25_15_54_46-YESMoney_nucale.png">
+</details>
+
+<details> <summary> As a Site User I can create, read, update and delete my Expenses details so that I can see a true reflection of my actual Expenses. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661439390/2022-08-25_15_56_13-YESMoney_w97rcn.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441100/2022-08-25_16_24_36-YESMoney_u1zpug.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661440239/2022-08-25_16_10_25-YESMoney_vqgg3l.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441437/2022-08-25_16_30_19-YESMoney_ztkxb8.png">
+</details>
+
+<details> <summary>As a Site User I can view a paginated list of expenses and incomes so that I can easily view and edit them on the page. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661548271/pagination_ioqmm1.jpg">
+</details>
+
+<details> <summary> As a Site User I can search for specific expense so that I can easily find it in my wallet. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661548329/search_e01uxa.jpg">
+</details>
+
+<details> <summary> As a Site User I can create, read, update and delete my Income details so that I can see a true reflection of my actual Income. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661439390/2022-08-25_15_56_13-YESMoney_w97rcn.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441296/2022-08-25_16_27_55-YESMoney_kcdbda.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661441437/2022-08-25_16_30_19-YESMoney_ztkxb8.png">
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661440239/2022-08-25_16_10_25-YESMoney_vqgg3l.png">
+</details>
+
+<details> <summary> https://res.cloudinary.com/katzur/image/upload/v1661439390/2022-08-25_15_56_13-YESMoney_w97rcn.png </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661548329/search_e01uxa.jpg">
+</details>
+
+<details> <summary> As a Site User I can view visual representation of my expenses (graph) so that I can have a better and easier look at my expenses details over certain period of time. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661439780/2022-08-25_16_02_43-YESMoney_ylbler.png">
+</details>
+
+<details> <summary> As a Site User I can view visual representation of my incomes (graph) so that I can have a better and easier look at my income details over certain period of time. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661548488/income_chart_lrrrjp.jpg">
+</details>
+
+<details> <summary> As a Site User I can provide feedback so that the Site Admin knows what needs to be changed in the app, and what additional categories they can add for expenses and incomes. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661438017/2022-08-25_15_33_17-YESMoney_Contact_Form_vjivec.png">
+</details>
+
+<details> <summary> As a Site User I export my expenses and incomes to CSV file so that I can print it out or view in Excel or other application. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661548615/export_csv_ccu6lq.jpg">
+</details>
+
+<details> <summary> As a Site Admin I can customize the Admin Panel so that I add different categories and features based on user's needs and feedback. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661548809/admin_options_kcc1vi.jpg">
+</details>
+
+<details> <summary> As a Site Admin I can create expense categories so that the Site Users can see better what type of expenses are generated over time. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661548851/add_category_dbgsjz.jpg">
+</details>
+
+<details> <summary> As a Site Admin I can create income sources so that the Site Users can see better what type of incomes are generated over time. </summary>
+<img src="https://res.cloudinary.com/katzur/image/upload/v1661548917/add_source_yhjjoh.jpg">
+</details>
 
 
 ## Manual Testing
@@ -377,7 +445,7 @@ No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esve
 | &check; | After successful editing of existing income - a message is displayed to the User informing about successful action on the main income page
 
 
-|  | **Wallet pages - Delete COnfirmation Page**
+|  | **Wallet pages - Delete Confirmation Page**
 |:-------:|:--------|
 | &check; | Page displays greeting and logged in Username in the top Navbar section
 | &check; | Sidebar contains Logo button, list of links with wallet options, sign out button
@@ -393,7 +461,7 @@ No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esve
 | &check; | Pressing on Cancel brings back the User to the main Expense or Income page
 
 
-## Error tracing and fixing
+## Error tracing and functionality fixing
 <details> <summary> Username testing. For that purpose I used the Postman to test the username validation request </summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661534975/username.test_srymjr.jpg">
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661535031/username.test2_ln0jwz.jpg">
