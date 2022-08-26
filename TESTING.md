@@ -1,8 +1,17 @@
-# Testing
 
-## Validator Testing 
+# Testing Table of Contents:
 
-### 1. [PEP8 Python Validation](http://pep8online.com/) - all pages passed successfully
+1. [Validators testing](<#validators-testing>)
+2. [Lighthouse scores](<#lighthouse-scores>)
+3. [User Story Testing](<#user-story-testing>)
+4. [Manual Testing](<#manual-testing>)
+5. [Error tracing and fixing in development process](<#error-tracing-and-fixing-in-development-process>)
+6. [Responsiveness Tests](<#responsiveness-tests>)
+7. [Issues and bugs](<#issues-and-bugs>)
+
+# Validators Testing 
+
+## 1. [PEP8 Python Validation](http://pep8online.com/) - all pages passed successfully
 
 <details> <summary> views.py - Authentication app </summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661454958/2022-08-25_20_15_45-PEP8_online_check_-_Results_osakhe.png">
@@ -52,7 +61,7 @@
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661459239/2022-08-25_21_27_02-PEP8_online_check_-_Results_sjca2h.png">
 </details>
 
-### 2. [HTML Validation](https://validator.w3.org/)
+## 2. [HTML Validation](https://validator.w3.org/)
 <details> <summary> Tested for all the pages. </summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661463898/2022-08-25_22_44_31-Showing_results_for_https___yes-money.herokuapp.com__-_Nu_Html_Checker_dl8qt4.png">
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661533922/2022-08-26_18_08_50-Showing_results_for_https___yes-money.herokuapp.com_authentication_contact_-_Nu_pfk7pv.png">
@@ -65,12 +74,12 @@
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661533922/2022-08-26_18_10_10-Showing_results_for_https___yes-money.herokuapp.com_income_-_Nu_Html_Checker_jdtlpe.png">
 </details>
 
-### 3. [CSS Validation](https://jigsaw.w3.org/css-validator/)
+## 3. [CSS Validation](https://jigsaw.w3.org/css-validator/)
 <details> <summary> The errors which can be seen on the screenshot below is coming from default Bootstrap url: https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css. Confirmed that it can be ignored, as it wasn't caused by my work on the project. </summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661467017/2022-08-25_22_48_32-W3C_CSS_Validator_results_for_https___yes-money.herokuapp.com__CSS_level_3_SV_zabemc.png">
 </details>
 
-### 4. [JavaScript Validation](https://jshint.com/)
+## 4. [JavaScript Validation](https://jshint.com/)
 No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esversion: 6'). Missing semicolons fixed.
 <details> <summary> static/js/register.js </summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661532404/2022-08-26_17_46_26-JSHint_a_JavaScript_Code_Quality_Tool_wlzzrz.png">
@@ -92,19 +101,19 @@ No errors, just warnings for Mozilla JS extensions (use moz) and  ES6 (use 'esve
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661533013/2022-08-26_17_55_22-JSHint_a_JavaScript_Code_Quality_Tool_k2to4m.png">
 </details>
 
-## Lighthouse Score
+# Lighthouse Scores
 
-### Mobile:
+## Mobile:
 <details> <summary> Mobile Lighthouse Score </summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661467281/2022-08-25_22_02_42-YESMoney_u4ewst.png">
 </details>
 
-### Desktop:
+## Desktop:
 <details> <summary> Desktop Lighthouse Score </summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661467268/2022-08-25_23_40_43-YESMoney_likd16.png">
 </details>
 
-## User Story Testing
+# User Story Testing
 Another part of my testing process was focusing on testing User Stories and identifying their successful implementation within the project.
 <details> <summary> As a Site User I can show/ hide my password once login in/ registering the account, so that I can see if it's typed in correctly/ hide it for the safety reasons. </summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661547938/password_cqsvrw.jpg">
@@ -177,9 +186,9 @@ Another part of my testing process was focusing on testing User Stories and iden
 </details>
 
 
-## Manual Testing
+# Manual Testing
 
-### <ins>Authentication pages work the same way for logged in and not logged in Users</ins>
+## Authentication pages work the same way for logged in and not logged in Users
 |  | **Authentication pages - Home**
 |:-------:|:--------|
 | &check; | Navbar contains links to Home, Contact, Login pages
@@ -237,7 +246,7 @@ Another part of my testing process was focusing on testing User Stories and iden
 | &check; | If any of the fields are entered incorrectly or missed - error messages are showing, asking to fill them before sending
 | &check; | If entered credentials are correct and button is clicked - message is displayed, informing the User that action was successful and they're allowed to log in
 
-### <ins>Wallet pages work ONLY for logged in Users.</ins>
+## Wallet pages work ONLY for logged in Users.
 * It's not accessible for Users who are not logged into their account. 
 * Logged in Users can see ONLY their own wallet. 
 * There is no way for the Users to view other Users incomes/ expenses. 
@@ -461,7 +470,7 @@ Another part of my testing process was focusing on testing User Stories and iden
 | &check; | Pressing on Cancel brings back the User to the main Expense or Income page
 
 
-## Error tracing and functionality fixing
+# Error tracing and fixing in development process
 <details> <summary> Username testing. For that purpose I used the Postman to test the username validation request </summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661534975/username.test_srymjr.jpg">
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661535031/username.test2_ln0jwz.jpg">
@@ -503,7 +512,7 @@ Another part of my testing process was focusing on testing User Stories and iden
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661537880/charts.testing_ajgljw.jpg">
 </details>
 
-## Responsiveness Test
+# Responsiveness Tests
 For this test I chose three different values: default for my desktop browser 1447px, tablet - 768px, mobile - 480px
 <details> <summary> Home Page</summary>
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661539569/index_g9yyd1.jpg">
@@ -533,7 +542,7 @@ For this test I chose three different values: default for my desktop browser 144
 <img src="https://res.cloudinary.com/katzur/image/upload/v1661539569/delete_gpsaz2.jpg">
 </details>
 
-## Issues and bugs
+# Issues and bugs
 1. Get Modal working with Delete button - I was able to create a modal for delete button, but it coudn't attach the delete option inside the modal to the expense/ income ID, hence needed to create a confirmation page in order to give the User a prompt asking for action verification.
 2. Loading Bootstrap CSS and JavaScript - the example I was using had a source code urls displayed locally as link href="../../dist/css/bootstrap.min.css" instead of link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" which caused issues with recognizing the code. In effect - I couldn't get any styling until I edited them to https:// urls.
 3. Displaying FontAwesome icons within the HTML code.
