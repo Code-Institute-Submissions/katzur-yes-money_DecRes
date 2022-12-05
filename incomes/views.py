@@ -126,6 +126,7 @@ def income_edit(request, id):
         return redirect('income')
 
 
+@login_required(login_url='/authentication/login')
 def delete_income(request, id):
     """
     Function allowing to delete income
@@ -136,6 +137,7 @@ def delete_income(request, id):
     return redirect('income')
 
 
+@login_required(login_url='/authentication/login')
 def delete_confirmation_income(request, id):
     """
     Function for delete confirmation page

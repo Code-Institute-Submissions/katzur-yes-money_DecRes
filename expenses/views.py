@@ -129,6 +129,7 @@ def expense_edit(request, id):
         return redirect('expenses')
 
 
+@login_required(login_url='/authentication/login')
 def delete_expense(request, id):
     """
     Function allowing to delte expense
@@ -139,6 +140,7 @@ def delete_expense(request, id):
     return redirect('expenses')
 
 
+@login_required(login_url='/authentication/login')
 def delete_confirmation(request, id):
     """
     Function for delete confirmation page
