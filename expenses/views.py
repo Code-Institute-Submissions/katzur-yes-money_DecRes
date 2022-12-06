@@ -134,6 +134,10 @@ def delete_expense(request, id):
     """
     Function allowing to delte expense
     """
+    if expense.owner != request.user:
+        messages.info(request, 'You are not the owner of this expense')
+        return redirect('home')
+
     expense = Expense.objects.get(pk=id)
     expense.delete()
     messages.success(request, 'Expense deleted successfully')
