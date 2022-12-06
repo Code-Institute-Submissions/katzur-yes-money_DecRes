@@ -134,7 +134,7 @@ def delete_expense(request, id):
     """
     Function allowing to delte expense
     """
-    if expense.owner != request.user:
+    if not Expense.owner != request.user:
         messages.info(request, 'You are not the owner of this expense')
         return redirect('home')
 

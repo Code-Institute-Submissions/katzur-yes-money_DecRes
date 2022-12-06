@@ -131,7 +131,7 @@ def delete_income(request, id):
     """
     Function allowing to delete income
     """
-    if income.owner != request.user:
+    if not Income.owner != request.user:
         messages.info(request, 'You are not the owner of this income')
         return redirect('home')
 
